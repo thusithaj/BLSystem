@@ -8,21 +8,21 @@ namespace BLSystem
     public partial class PMModel : DbContext
     {
         public PMModel()
-            : base("name=pmmodelCn")
+            : base("name=pmmodelcn")
         {
         }
 
         public virtual DbSet<AddressBook> AddressBooks { get; set; }
         public virtual DbSet<AddressBookType> AddressBookTypes { get; set; }
         public virtual DbSet<CompanyMaster> CompanyMasters { get; set; }
-        public virtual DbSet<Factory> Factories { get; set; }
+        public virtual DbSet<FactoryMaster> FactoryMasters { get; set; }
         public virtual DbSet<PriceList> PriceLists { get; set; }
         public virtual DbSet<PriceListType> PriceListTypes { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<RouteQty> RouteQties { get; set; }
         public virtual DbSet<SupplierLedger> SupplierLedgers { get; set; }
         public virtual DbSet<SupplierMaster> SupplierMasters { get; set; }
-        //public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TeamMaster> TeamMasters { get; set; }
         public virtual DbSet<WorkCenterMaster> WorkCenterMasters { get; set; }
 
@@ -94,14 +94,34 @@ namespace BLSystem
                 .HasForeignKey(e => e.CompanyId);
 
             modelBuilder.Entity<CompanyMaster>()
-                .HasMany(e => e.Factories)
+                .HasMany(e => e.FactoryMasters)
                 .WithOptional(e => e.CompanyMaster)
                 .HasForeignKey(e => e.CompanyId)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<Factory>()
+            modelBuilder.Entity<FactoryMaster>()
                 .Property(e => e.FactoryName)
                 .IsFixedLength();
+
+            modelBuilder.Entity<FactoryMaster>()
+                .HasMany(e => e.AddressBooks)
+                .WithOptional(e => e.FactoryMaster)
+                .HasForeignKey(e => e.FactoryId);
+
+            modelBuilder.Entity<FactoryMaster>()
+                .HasMany(e => e.Products)
+                .WithOptional(e => e.FactoryMaster)
+                .HasForeignKey(e => e.FactoryId);
+
+            modelBuilder.Entity<FactoryMaster>()
+                .HasMany(e => e.SupplierMasters)
+                .WithOptional(e => e.FactoryMaster)
+                .HasForeignKey(e => e.FactoryId);
+
+            modelBuilder.Entity<FactoryMaster>()
+                .HasMany(e => e.WorkCenterMasters)
+                .WithOptional(e => e.FactoryMaster)
+                .HasForeignKey(e => e.FactoryId);
 
             modelBuilder.Entity<PriceList>()
                 .Property(e => e.Price)

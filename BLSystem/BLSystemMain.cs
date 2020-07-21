@@ -12,7 +12,7 @@ namespace BLSystem
 {
     public partial class BLSystemMain : Form
     {
-        private int childFormNumber = 0;
+        //private int childFormNumber = 0;
 
         public BLSystemMain()
         {
@@ -39,13 +39,11 @@ namespace BLSystem
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
+            FormFactory childForm = new FormFactory();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)

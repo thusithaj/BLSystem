@@ -6,25 +6,25 @@ namespace BLSystem
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("WorkCenterMaster")]
-    public partial class WorkCenterMaster
+    [Table("CompanyMaster")]
+    public partial class CompanyMaster
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WorkCenterMaster()
+        public CompanyMaster()
         {
-            TeamMasters = new HashSet<TeamMaster>();
+            AddressBookTypes = new HashSet<AddressBookType>();
+            FactoryMasters = new HashSet<FactoryMaster>();
         }
 
         public int id { get; set; }
 
-        public int? FactoryId { get; set; }
-
         [StringLength(100)]
-        public string WorkSection { get; set; }
-
-        public virtual Factory Factory { get; set; }
+        public string CompanyName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TeamMaster> TeamMasters { get; set; }
+        public virtual ICollection<AddressBookType> AddressBookTypes { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FactoryMaster> FactoryMasters { get; set; }
     }
 }

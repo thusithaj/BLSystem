@@ -6,11 +6,11 @@ namespace BLSystem
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Factory")]
-    public partial class Factory
+    [Table("FactoryMaster")]
+    public partial class FactoryMaster
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Factory()
+        public FactoryMaster()
         {
             AddressBooks = new HashSet<AddressBook>();
             Products = new HashSet<Product>();

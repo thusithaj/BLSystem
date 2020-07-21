@@ -39,7 +39,7 @@ namespace BLSystem
 
         private void GetCompanyList()
         {
-            if ( contxt.CompanyMasters.ToList().Count > 0)
+            if ( contxt.CompanyMasters.ToList().Count > 0 && isFormLoading)
             {
                 companies = contxt.CompanyMasters.ToList();
                 dgvCo.DataSource = companies;

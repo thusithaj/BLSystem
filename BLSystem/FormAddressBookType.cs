@@ -15,6 +15,8 @@ namespace BLSystem
         PMModel contxt;
         AddressBookType bookType;
         List<AddressBookType> bookTypes;
+        CompanyMaster company;
+        List<CompanyMaster> companies;
         bool isNew=false, isEdit= false;
         enum FORMSTATE {  ADD,EDIT,VIEW,DELETE,NOOP};
         FORMSTATE state;
@@ -28,10 +30,24 @@ namespace BLSystem
             contxt = new PMModel();
             bookType = new AddressBookType();
             bookTypes = new List<AddressBookType>();
+            company = new CompanyMaster();
+            companies = new List<CompanyMaster>();
             state = FORMSTATE.NOOP;
             SetButtons();
             panelMid.Enabled = false;
             GetAddressBookTypeList();
+            GetCompanyList();
+        }
+        private void GetCompanyList()
+        {
+            if (contxt.CompanyMasters.ToList().Count > 0)
+            {
+                companies = contxt.CompanyMasters.ToList();
+                cboCom.DataSource = companies;
+                cboCom.DisplayMember = "CompanyName";
+                cboCom.ValueMember = "id";
+            }
+            //throw new NotImplementedException();
         }
         private void GetAddressBookTypeList()
         {
@@ -121,6 +137,7 @@ namespace BLSystem
             bookType.Category01 = tbCat01.Text;
             bookType.Category02 = tbCat02.Text;
             bookType.Category03 = tbCat03.Text;
+            bookType.CompanyId = company.id;
             //throw new NotImplementedException();
         }
 
@@ -140,6 +157,11 @@ namespace BLSystem
             tbCat01.Text = bookType.Category01;
             tbCat02.Text = bookType.Category02;
             tbCat03.Text = bookType.Category03;
+            if (bookType.CompanyId != null)
+            {
+                company = companies.Where(o => o.id == bookType.CompanyId).FirstOrDefault();
+                cboCom.SelectedItem = company;
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -170,6 +192,11 @@ namespace BLSystem
             SetButtons();
             ClearContents();
             panelMid.Enabled = false;
+        }
+
+        private void cboCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            company =(CompanyMaster) cboCom.SelectedItem;
         }
 
         /// <summary>

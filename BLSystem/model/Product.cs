@@ -42,7 +42,7 @@ namespace BLSystem
 
         public DateTime? ModifiedDate { get; set; }
 
-        public virtual Factory Factory { get; set; }
+        public virtual FactoryMaster FactoryMaster { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PriceList> PriceLists { get; set; }

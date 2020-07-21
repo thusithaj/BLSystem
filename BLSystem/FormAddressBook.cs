@@ -15,10 +15,10 @@ namespace BLSystem
         PMModel contxt;
         AddressBookType bookType;
         AddressBook address;
-        Factory factory;
+        FactoryMaster factory;
         List<AddressBookType> bookTypes;
         List<AddressBook> addresses;
-        List<Factory> factories;
+        List<FactoryMaster> factories;
         bool isNew = false, isEdit = false;
         enum FORMSTATE { ADD, EDIT, VIEW, DELETE, NOOP };
         FORMSTATE state;
@@ -34,9 +34,9 @@ namespace BLSystem
             bookType = new AddressBookType();
             bookTypes = new List<AddressBookType>();
             addresses = new List<AddressBook>();
-            factories = new List<Factory>();
+            factories = new List<FactoryMaster>();
             address = new AddressBook();
-            factory = new Factory();
+            factory = new FactoryMaster();
             GetAddressBookTypeList();
             GetFactories();
             state = FORMSTATE.NOOP;
@@ -48,14 +48,14 @@ namespace BLSystem
 
         private void GetFactories()
         {
-            if (contxt.Factories.ToList().Count >0)
+            if (contxt.FactoryMasters.ToList().Count >0)
             {
-                factories = contxt.Factories.ToList();
+                factories = contxt.FactoryMasters.ToList();
                 
             }
             else
             {
-                Factory newFac = new Factory();
+                FactoryMaster newFac = new FactoryMaster();
                 newFac.FactoryName = "New";
                 newFac.id = 0;
                 factories.Add(newFac);
@@ -195,7 +195,7 @@ namespace BLSystem
         {
             if(cboFactory.SelectedItem != null && !isFormLoading)
             {
-                factory = (Factory)cboFactory.SelectedItem;
+                factory = (FactoryMaster)cboFactory.SelectedItem;
                 if(factory.id == 0)
                 {
                     MessageBox.Show("Call add factory Form Here");
