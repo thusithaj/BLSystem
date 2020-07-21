@@ -117,35 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gnome-color-chooser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnome-color-chooser.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="application-exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\application-exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document-quick_restart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-quick_restart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="address-book-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\address-book-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document-save-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-save-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document-quick_restart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-quick_restart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit-delete-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-delete-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="db_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\db_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gnome-blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnome-blog.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="TypeName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Cat01.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Cat02.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Cat03.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAIpPIniISyD8h0og/4dKIP+HSiD/h0og/4dKIP+HSiD/h0og/4dKIP+ISyD8iE0ieAAA
+        AAAAAAAAu8G/e7a9uv6aoJ7/iI2K/66gkP/Ys5D/2LOP/9ixjv/XsY7/17GN/9exjf/XsY3/0qmD/4RL
+        Jf8AXM7/BGLSwLnAvPH09fX//////+vs6/+Fioj/xJBj/8OPYv/CjmD/wo1f/8GMXv/Ai13/v4lb/86l
+        gf+HSiD/ic79/whh0P+qsK733+Hh/4WKiP+HjIn/o454/76IWv+8hlf/uoRW/7mCU/+4f1H/tn5P/7V8
+        Tf/HnHr/h0og/5bT/f8TaNL/rrWywba9uv+aoJ7/iI2K/6SPef+/ilv/0auK/+3e0f/s3dH/7d/T/8+s
+        jv+0fEz/x6B9/4dKIP+f1/7/DGTQ/7nAvPH09fX//////+vs6/+Fioj/1bGR/+nWxv/FlWv/yqB8/8Oe
+        ev/Gqoz/sYZb/8Woif+FTST/AF3O/wRvz++qsK733+Hh/4WKiP+HjIn/ppJ9//Dj1//Hlmv/7unj/8vM
+        vf/N8fP/sODh/6TMxP+kv7D/e2tN/5Tx/P8Kpcf/rrWywba9uv+aoJ7/iI2L/6iVf//w49f/x6J7/87q
+        6P8L0ef/ceXy/17c5v8J1e3/advk/2Ouqv+E7/z/HrPR/7nAvPH09fX//////+vs6/+Fioj/7OLX/66q
+        i/8L1e3/6/v9/wTU7f8E1O3/6/v9/wfV7v9Q3Oz/Y+v8/y3G4f+qsK733+Hh/4WKiP+HjIr/qJeC/8+9
+        ov+Q3d//BdTs//z+/v/m+vz/5vr8/+f6/P8E1e3/RuT3/0jj9/881+j6rrWywba9uv+aoJ7/iY2L/6eY
+        gv+uq4r/XtPZ/wLU7f/n+/3/5vr9/+b6/f/m+fz/AdTt/zfh9v9N6Pn/Qtrb/7nAvPH09fX//////+vs
+        6/+Cion/qauN/wbT6v/m+vz/5vr9/+b6/f/m+v3/5vr9/+b6/P8E1e3/Suf5/0HX1v+qsK733+Hh/4WK
+        iP+HjIn/sKug/8DMvf8I1Ov/5/r8/+b6/f/m+v3/5vr9/+b6/f/m+vz/BNXt/03n9/84zb7/mZ+dh4WK
+        iP+nnpT/i08n/4ZKIP98VjL/CMzi/wLS6v8A1Oz/7fv9/+37/f8A1O3/AdTt/wXV7f871tX/KcGh1AAA
+        AACQWDG6w6WQ/Pv5+P//////+P3+/8/3+/936fb/Ktzx/wHU7f8B1O3/F9nw/zPZ6/9Rxs7uTOj7bE/p
+        /B4AAAAAikogGI9VLsOJTST7h0og/4ZKIP+ATyj/cWRG/1SKff8+qan/OrK3/0Wtrv5dpaDjVcPJU0/p
+        /BdP6fwD4AcAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AACAAwAAwAcAAA==
+</value>
   </data>
 </root>
