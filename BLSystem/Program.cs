@@ -16,7 +16,9 @@ namespace BLSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new BLSystemMain());
+            
         }
     }
 }

@@ -22,6 +22,7 @@ namespace BLSystem
         bool isNew = false, isEdit = false;
         enum FORMSTATE { ADD, EDIT, VIEW, DELETE, NOOP };
         FORMSTATE state;
+        OldBlObj old;
         bool isFormLoading = true;
         public FormAddressBook()
         {
@@ -43,6 +44,7 @@ namespace BLSystem
             SetButtons();
             panelMid.Enabled = false;
             isFormLoading = false;
+            panelMBot.Visible = false;
             
         }
 
@@ -84,6 +86,14 @@ namespace BLSystem
             {
                 bookType = (AddressBookType)cboType.SelectedItem;
                 GetAddressList();
+                if (bookType.BookTypeName.Trim().ToLower() =="route")
+                {
+                    panelMBot.Visible = true;
+                }
+                else
+                {
+                    panelMBot.Visible = false;
+                }
             }
 
         }
@@ -159,14 +169,17 @@ namespace BLSystem
         }
         private void Save()
         {
-            GetContents();
+            
             if (isNew)
             {
                 address.CreatedBy = 1;
                 address.CreatedDate = DateTime.Now;
                 contxt.AddressBooks.Add(address);
+                contxt.Entry(address).State = System.Data.Entity.EntityState.Added;
                 contxt.SaveChanges();
+
                 isNew = false; isEdit = false;
+                
                 state = FORMSTATE.NOOP;
                 
                 SetButtons();
@@ -183,6 +196,7 @@ namespace BLSystem
                     book.AddressLine01 = address.AddressLine01;
                     book.AddressLine02 = address.AddressLine02;
                     book.AddressBookType = address.AddressBookType;
+                    
                     contxt.SaveChanges();
                     isNew = false; isEdit = false;
                     state = FORMSTATE.NOOP;
@@ -205,6 +219,7 @@ namespace BLSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            GetContents();
             try
             {
                 Save();
@@ -216,6 +231,74 @@ namespace BLSystem
                 MessageBox.Show(" Record Not Saved \n" + ex.Message);
             }
             
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            GetOldRoutes();
+        }
+
+        private void GetOldRoutes()
+        {
+            old = new OldBlObj();
+            string sql = " Select * from Route_List";
+            DataTable oldr = new DataTable();
+            oldr = old.GetDataTable(sql);
+            int reccnt = 0;
+            if ( oldr.Rows.Count >0 )
+            {
+                this.Cursor = Cursors.WaitCursor;
+                foreach( DataRow dr in oldr.Rows)
+                {
+                    address.AddressType = bookType.id;
+                    string routeName = dr["rName"].ToString().Trim();
+                    address.AddressName = routeName;
+                    address.AddressLine01 = address.AddressName;
+                    address.FactoryId = factory.id;
+                    
+                    AddressBook abtemp = contxt.AddressBooks.FirstOrDefault(
+                        o => o.AddressName.Trim() == routeName && o.AddressType == bookType.id);
+                    
+                    if (abtemp == null)
+                    {
+                        //isNew = true; isEdit = false;
+                        //Save();
+                        address.CreatedBy = 1;
+                        address.CreatedDate = DateTime.Now;
+                        contxt.AddressBooks.Add(address);
+                        contxt.Entry(address).State = System.Data.Entity.EntityState.Added;
+
+                    }
+                    else
+                    {
+                        //isNew = false; isEdit = true;
+                        address.id = abtemp.id;
+                        abtemp.ModifiedBy = 1;
+                        abtemp.ModifiedDate = DateTime.Now;
+                        abtemp.AddressName = address.AddressName;
+                        abtemp.AddressLine01 = address.AddressLine01;
+                        abtemp.AddressLine02 = address.AddressLine02;
+                        abtemp.AddressBookType = address.AddressBookType;
+                        abtemp.AddressType = bookType.id;
+                        contxt.Entry(abtemp).CurrentValues.SetValues(address);// = System.Data.Entity.EntityState.Modified;
+                        
+                        abtemp = null;
+                    }
+                    contxt.SaveChanges();
+                    reccnt++;
+                    if (reccnt % 100 == 0)
+                        pgAb.Value++;
+                    pgAb.Refresh();
+                    address = new AddressBook();
+                    //Application.
+                }
+                lmsg.Text = reccnt.ToString() + " Record updated";
+                if (reccnt < 100)
+                    pgAb.Value = pgAb.Value +( 100 - pgAb.Value) ;
+                pgAb.Refresh();
+                this.Cursor = Cursors.Default;
+                
+            }
         }
 
         private void GetContents()

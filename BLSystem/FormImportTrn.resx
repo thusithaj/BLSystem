@@ -117,44 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gnome-color-chooser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnome-color-chooser.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="application-exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\application-exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document-quick_restart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-quick_restart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document-quick_restart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-quick_restart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gnome-fs-blockdev" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnome-fs-blockdev.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="address-book-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\address-book-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gnome-chess" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnome-chess.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document-save-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-save-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit-delete-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-delete-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gnome-blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnome-blog.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="db_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\db_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gnomeicu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gnomeicu.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAXdBnAF3P9ABczv8AXM7/AFzO/wBczv8AXM7/AFzO/wBczv8AXM7/AFzO/wBczv8AXM7/AFzO/wJe
+        z/EAXM4jAF3P8aPJ8//29vb/9vb2//b29v/29vb/9vb2//b29v/29vb/9vb2//b29v/29vb/9vb2//b2
+        9v+Cseb3AFzOOABczvzz8/X/9fX1//X19f/19fX/9fX1//X19f/19fX/9fX1//X19f/19fX/9fX1//X1
+        9f/19fX/NoHa9ABczikAXM7/hrLf/9vh3v/b4d7/2+He/9vh3v/b4d7/2+He/9XY0f96wc7/bL/Q/9vh
+        3v/b4d7/2+He/26g2PkAXM4gAl/Q/QJf0P8BXc//AV3P/wFdz/8AXc//AF3P/yNerv+db0j/endd/wV8
+        x/8AXc//AF3P/wBdz/8AXc//Al/QsANg0fmTyvj/pNX8/6PV/P+j1Pz/otT8/6Korv+ygVv/yaCA/6Jz
+        S/+dyez/n9H8/57Q/P+d0Pz/h8T6/wBdzvwDYdHwisP2/0yw+/80pfr/M6T6/2OIp/+1h2T/1LCP/7KD
+        X/84e77/II3v/yeY9v8pm/n/LZz5/53P+/8BXtDyA2HR43+98/9Vtfv/NKX4/2mNpf+1h2X/1rGR/7WL
+        a/9Peqv/J5H1/x6I7P8TeuL/I5X0/zmj+f+Oxvj/AmDR3gJf0M9ztfD/gpGa/5xvSv+we1D/y6J//7mN
+        av+dpKn/lM/9/4TF/P86mvj/JI/0/xeB5f9Jq/r/f7z0/wNh0cQAXM63dZvB/6NtQv/DmHf/1bSY/7F7
+        Uf+kpqr/N6P6/02u+/+c0vz/m9H9/xWF9v8UeuH/WbT7/3Cy8f8DYNGlFl25qZ5qQv+/lnb/3b6j/8KY
+        d/+bjIT/gsj8/0Os+/9Ws/v/nNL9/6DS/P8biPb/HYbn/2m8+/9epez/AV3Ogmpia8G1hF//17ec/8CX
+        dv9rj67/GYbz/4S99P+hz/j/ndD6/4PA+P8ji/T/T5/y/zGi9/95xPz/TJfm/gBczmeIa17EyaSH/7SI
+        Zf9nosn/ptr+/2e5+/8slvf/C4D0/w+B8/85mPT/eb75/0yy+/84qvv/iMz9/zmI4P0AXM5NoWU47XJ1
+        hP+azOz/QLD8/0mz/P9rwv3/jtD9/6nb/v+O0P3/a8L9/0iz/P89rvv/O637/5fT/f8leNn7AFzOMkpg
+        iB8HYtH8hsr6/67d/v+u3f7/rt3+/67d/v+u3f7/rt3+/67d/v+u3f7/rt3+/67d/v+c1Pz/CGPR+QBc
+        zhT///8ABGHRiQFez/gAXM7/AFzO/wBczv8AXM7/AFzO/wBczv8AXM7/AFzO/wBczv8AXM7/AV3P+wRh
+        0aP///8AgAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAB
+        AACAAQAAgAEAAA==
+</value>
   </data>
 </root>

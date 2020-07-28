@@ -15,6 +15,7 @@ namespace BLSystem
             SupplierLedgers = new HashSet<SupplierLedger>();
             SupplierLedgers1 = new HashSet<SupplierLedger>();
             SupplierMasters = new HashSet<SupplierMaster>();
+            SupplierMasters1 = new HashSet<SupplierMaster>();
         }
 
         public int id { get; set; }
@@ -34,6 +35,15 @@ namespace BLSystem
 
         [StringLength(100)]
         public string City { get; set; }
+
+        [StringLength(20)]
+        public string TP01 { get; set; }
+
+        [StringLength(20)]
+        public string TP02 { get; set; }
+
+        [StringLength(50)]
+        public string Email { get; set; }
 
         public int? CreatedBy { get; set; }
 
@@ -55,5 +65,8 @@ namespace BLSystem
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupplierMaster> SupplierMasters { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SupplierMaster> SupplierMasters1 { get; set; }
     }
 }

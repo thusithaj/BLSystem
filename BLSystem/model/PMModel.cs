@@ -45,6 +45,18 @@ namespace BLSystem
                 .IsFixedLength();
 
             modelBuilder.Entity<AddressBook>()
+                .Property(e => e.TP01)
+                .IsFixedLength();
+
+            modelBuilder.Entity<AddressBook>()
+                .Property(e => e.TP02)
+                .IsFixedLength();
+
+            modelBuilder.Entity<AddressBook>()
+                .Property(e => e.Email)
+                .IsFixedLength();
+
+            modelBuilder.Entity<AddressBook>()
                 .HasMany(e => e.SupplierLedgers)
                 .WithRequired(e => e.AddressBook)
                 .HasForeignKey(e => e.RouteId)
@@ -54,6 +66,16 @@ namespace BLSystem
                 .HasMany(e => e.SupplierLedgers1)
                 .WithOptional(e => e.AddressBook1)
                 .HasForeignKey(e => e.RelatedFactory);
+
+            modelBuilder.Entity<AddressBook>()
+                .HasMany(e => e.SupplierMasters)
+                .WithOptional(e => e.AddressBook)
+                .HasForeignKey(e => e.AddressBookId);
+
+            modelBuilder.Entity<AddressBook>()
+                .HasMany(e => e.SupplierMasters1)
+                .WithOptional(e => e.AddressBook1)
+                .HasForeignKey(e => e.RouteId);
 
             modelBuilder.Entity<AddressBookType>()
                 .Property(e => e.BookTypeName)
@@ -168,6 +190,14 @@ namespace BLSystem
 
             modelBuilder.Entity<SupplierMaster>()
                 .Property(e => e.WelfareId)
+                .IsFixedLength();
+
+            modelBuilder.Entity<SupplierMaster>()
+                .Property(e => e.PayMode)
+                .IsFixedLength();
+
+            modelBuilder.Entity<SupplierMaster>()
+                .Property(e => e.BankAccount)
                 .IsFixedLength();
 
             modelBuilder.Entity<SupplierMaster>()

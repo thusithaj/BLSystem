@@ -19,7 +19,12 @@ namespace BLSystem
 
         public int? FactoryId { get; set; }
 
+        public int? RouteId { get; set; }
+
         public int RegNo { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? RegDate { get; set; }
 
         public int? AddressBookId { get; set; }
 
@@ -36,6 +41,23 @@ namespace BLSystem
         [Column(TypeName = "date")]
         public DateTime? SavingRegDate { get; set; }
 
+        [Column(TypeName = "date")]
+        public DateTime? LastLeafDate { get; set; }
+
+        public int? Status { get; set; }
+
+        public decimal? Balance { get; set; }
+
+        public int? Deleted { get; set; }
+
+        [StringLength(10)]
+        public string PayMode { get; set; }
+
+        [StringLength(20)]
+        public string BankAccount { get; set; }
+
+        public int? BankId { get; set; }
+
         public int? CreatedBy { get; set; }
 
         public DateTime? CreatedDate { get; set; }
@@ -45,6 +67,8 @@ namespace BLSystem
         public DateTime? ModifiedDate { get; set; }
 
         public virtual AddressBook AddressBook { get; set; }
+
+        public virtual AddressBook AddressBook1 { get; set; }
 
         public virtual FactoryMaster FactoryMaster { get; set; }
 

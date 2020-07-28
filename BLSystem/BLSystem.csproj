@@ -43,6 +43,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -57,16 +59,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model\AddressBook.cs" />
-    <Compile Include="model\AddressBookType.cs" />
+    <Compile Include="FormImportTrn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportTrn.Designer.cs">
+      <DependentUpon>FormImportTrn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducts.Designer.cs">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSupplierMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplierMaster.Designer.cs">
+      <DependentUpon>FormSupplierMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransaction.Designer.cs">
+      <DependentUpon>FormTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="BLSystemMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BLSystemMain.Designer.cs">
       <DependentUpon>BLSystemMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\CompanyMaster.cs" />
-    <Compile Include="model\FactoryMaster.cs" />
     <Compile Include="FormAddressBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,18 +113,23 @@
     <Compile Include="FormFactory.Designer.cs">
       <DependentUpon>FormFactory.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\AddressBook.cs" />
+    <Compile Include="model\AddressBookType.cs" />
+    <Compile Include="model\CompanyMaster.cs" />
+    <Compile Include="model\FactoryMaster.cs" />
     <Compile Include="model\PMModel.cs" />
     <Compile Include="model\PriceList.cs" />
     <Compile Include="model\PriceListType.cs" />
     <Compile Include="model\Product.cs" />
-    <Compile Include="model\Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\RouteQty.cs" />
     <Compile Include="model\SupplierLedger.cs" />
     <Compile Include="model\SupplierMaster.cs" />
     <Compile Include="model\sysdiagram.cs" />
     <Compile Include="model\TeamMaster.cs" />
     <Compile Include="model\WorkCenterMaster.cs" />
+    <Compile Include="OldBlObj.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BLSystemMain.resx">
       <DependentUpon>BLSystemMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +144,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFactory.resx">
       <DependentUpon>FormFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportTrn.resx">
+      <DependentUpon>FormImportTrn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducts.resx">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplierMaster.resx">
+      <DependentUpon>FormSupplierMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransaction.resx">
+      <DependentUpon>FormTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,7 +213,11 @@
   <ItemGroup>
     <None Include="Resources\gnome-blog.ico" />
     <None Include="Resources\gnome-color-chooser.ico" />
+    <None Include="Resources\gnome-chess.ico" />
+    <None Include="Resources\gnome-fs-blockdev.ico" />
+    <None Include="Resources\gnomeicu.ico" />
     <Content Include="TeaLeafIcon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

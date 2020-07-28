@@ -34,6 +34,8 @@ namespace BLSystem
 
         public decimal? Conversion { get; set; }
 
+        public int? PrintOrder { get; set; }
+
         public int? CreatedBy { get; set; }
 
         public DateTime? CreatedDate { get; set; }

@@ -109,5 +109,23 @@ namespace BLSystem
             childForm.WindowState = FormWindowState.Maximized;
             childForm.Show();
         }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSupplierMaster childForm = new FormSupplierMaster();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProducts childForm = new FormProducts();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
     }
 }

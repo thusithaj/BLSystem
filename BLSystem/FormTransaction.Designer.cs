@@ -1,6 +1,6 @@
 ﻿namespace BLSystem
 {
-    partial class FormCompany
+    partial class FormTransaction
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompany));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTransaction));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.panelMid = new System.Windows.Forms.Panel();
-            this.panelBot = new System.Windows.Forms.Panel();
-            this.dgvCo = new System.Windows.Forms.DataGridView();
-            this.lco = new System.Windows.Forms.Label();
-            this.tbCompany = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -42,12 +37,24 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelBot = new System.Windows.Forms.Panel();
+            this.panelMid = new System.Windows.Forms.Panel();
+            this.nAmt = new System.Windows.Forms.NumericUpDown();
+            this.lam = new System.Windows.Forms.Label();
+            this.nQty = new System.Windows.Forms.NumericUpDown();
+            this.lQt = new System.Windows.Forms.Label();
+            this.cboSup = new System.Windows.Forms.ComboBox();
+            this.lts = new System.Windows.Forms.Label();
+            this.dtTrnDate = new System.Windows.Forms.DateTimePicker();
+            this.ltd = new System.Windows.Forms.Label();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.lti = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
-            this.panelMid.SuspendLayout();
             this.panelBot.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCo)).BeginInit();
+            this.panelMid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nAmt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nQty)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -63,60 +70,8 @@
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Margin = new System.Windows.Forms.Padding(5);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1129, 59);
-            this.panelTop.TabIndex = 2;
-            // 
-            // panelMid
-            // 
-            this.panelMid.Controls.Add(this.tbCompany);
-            this.panelMid.Controls.Add(this.lco);
-            this.panelMid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMid.Location = new System.Drawing.Point(0, 59);
-            this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1129, 123);
-            this.panelMid.TabIndex = 3;
-            // 
-            // panelBot
-            // 
-            this.panelBot.Controls.Add(this.dgvCo);
-            this.panelBot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBot.Location = new System.Drawing.Point(0, 182);
-            this.panelBot.Name = "panelBot";
-            this.panelBot.Size = new System.Drawing.Size(1129, 380);
-            this.panelBot.TabIndex = 4;
-            // 
-            // dgvCo
-            // 
-            this.dgvCo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CompanyName,
-            this.ID});
-            this.dgvCo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvCo.Location = new System.Drawing.Point(0, 0);
-            this.dgvCo.MultiSelect = false;
-            this.dgvCo.Name = "dgvCo";
-            this.dgvCo.RowTemplate.Height = 24;
-            this.dgvCo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCo.Size = new System.Drawing.Size(1129, 380);
-            this.dgvCo.TabIndex = 0;
-            this.dgvCo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCo_CellContentClick);
-            // 
-            // lco
-            // 
-            this.lco.AutoSize = true;
-            this.lco.Location = new System.Drawing.Point(30, 25);
-            this.lco.Name = "lco";
-            this.lco.Size = new System.Drawing.Size(143, 20);
-            this.lco.TabIndex = 0;
-            this.lco.Text = "Company Name : ";
-            // 
-            // tbCompany
-            // 
-            this.tbCompany.Location = new System.Drawing.Point(192, 22);
-            this.tbCompany.Name = "tbCompany";
-            this.tbCompany.Size = new System.Drawing.Size(367, 27);
-            this.tbCompany.TabIndex = 1;
+            this.panelTop.Size = new System.Drawing.Size(1408, 59);
+            this.panelTop.TabIndex = 5;
             // 
             // btnCancel
             // 
@@ -143,7 +98,6 @@
             this.btnExit.Text = "E&xit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -157,7 +111,6 @@
             this.btnSave.Text = "&Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -184,7 +137,6 @@
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnEdit
             // 
@@ -211,39 +163,175 @@
             this.btnAdd.Text = "&New";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // CompanyName
+            // panelBot
             // 
-            this.CompanyName.DataPropertyName = "CompanyName";
-            this.CompanyName.HeaderText = "Company";
-            this.CompanyName.Name = "CompanyName";
+            this.panelBot.Controls.Add(this.btnImport);
+            this.panelBot.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBot.Location = new System.Drawing.Point(0, 458);
+            this.panelBot.Name = "panelBot";
+            this.panelBot.Size = new System.Drawing.Size(1408, 69);
+            this.panelBot.TabIndex = 7;
             // 
-            // ID
+            // panelMid
             // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
+            this.panelMid.Controls.Add(this.nAmt);
+            this.panelMid.Controls.Add(this.lam);
+            this.panelMid.Controls.Add(this.nQty);
+            this.panelMid.Controls.Add(this.lQt);
+            this.panelMid.Controls.Add(this.cboSup);
+            this.panelMid.Controls.Add(this.lts);
+            this.panelMid.Controls.Add(this.dtTrnDate);
+            this.panelMid.Controls.Add(this.ltd);
+            this.panelMid.Controls.Add(this.cboProduct);
+            this.panelMid.Controls.Add(this.lti);
+            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMid.Location = new System.Drawing.Point(0, 59);
+            this.panelMid.Name = "panelMid";
+            this.panelMid.Size = new System.Drawing.Size(1408, 399);
+            this.panelMid.TabIndex = 8;
             // 
-            // FormCompany
+            // nAmt
+            // 
+            this.nAmt.DecimalPlaces = 2;
+            this.nAmt.Location = new System.Drawing.Point(853, 61);
+            this.nAmt.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            131072});
+            this.nAmt.Minimum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            -2147352576});
+            this.nAmt.Name = "nAmt";
+            this.nAmt.Size = new System.Drawing.Size(159, 27);
+            this.nAmt.TabIndex = 9;
+            this.nAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lam
+            // 
+            this.lam.AutoSize = true;
+            this.lam.Location = new System.Drawing.Point(764, 62);
+            this.lam.Name = "lam";
+            this.lam.Size = new System.Drawing.Size(76, 20);
+            this.lam.TabIndex = 8;
+            this.lam.Text = "Amount :";
+            // 
+            // nQty
+            // 
+            this.nQty.DecimalPlaces = 2;
+            this.nQty.Location = new System.Drawing.Point(573, 62);
+            this.nQty.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            131072});
+            this.nQty.Minimum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            -2147352576});
+            this.nQty.Name = "nQty";
+            this.nQty.Size = new System.Drawing.Size(159, 27);
+            this.nQty.TabIndex = 7;
+            this.nQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lQt
+            // 
+            this.lQt.AutoSize = true;
+            this.lQt.Location = new System.Drawing.Point(522, 64);
+            this.lQt.Name = "lQt";
+            this.lQt.Size = new System.Drawing.Size(45, 20);
+            this.lQt.TabIndex = 6;
+            this.lQt.Text = "Qty :";
+            // 
+            // cboSup
+            // 
+            this.cboSup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboSup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSup.FormattingEnabled = true;
+            this.cboSup.Location = new System.Drawing.Point(175, 61);
+            this.cboSup.Name = "cboSup";
+            this.cboSup.Size = new System.Drawing.Size(313, 28);
+            this.cboSup.TabIndex = 5;
+            // 
+            // lts
+            // 
+            this.lts.AutoSize = true;
+            this.lts.Location = new System.Drawing.Point(78, 61);
+            this.lts.Name = "lts";
+            this.lts.Size = new System.Drawing.Size(80, 20);
+            this.lts.TabIndex = 4;
+            this.lts.Text = "Supplier :";
+            // 
+            // dtTrnDate
+            // 
+            this.dtTrnDate.CustomFormat = "dd/MM/yyyy";
+            this.dtTrnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTrnDate.Location = new System.Drawing.Point(812, 21);
+            this.dtTrnDate.Name = "dtTrnDate";
+            this.dtTrnDate.Size = new System.Drawing.Size(200, 27);
+            this.dtTrnDate.TabIndex = 3;
+            // 
+            // ltd
+            // 
+            this.ltd.AutoSize = true;
+            this.ltd.Location = new System.Drawing.Point(698, 26);
+            this.ltd.Name = "ltd";
+            this.ltd.Size = new System.Drawing.Size(89, 20);
+            this.ltd.TabIndex = 2;
+            this.ltd.Text = "Trn. Date :";
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(175, 23);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(474, 28);
+            this.cboProduct.TabIndex = 1;
+            // 
+            // lti
+            // 
+            this.lti.AutoSize = true;
+            this.lti.Location = new System.Drawing.Point(14, 26);
+            this.lti.Name = "lti";
+            this.lti.Size = new System.Drawing.Size(144, 20);
+            this.lti.TabIndex = 0;
+            this.lti.Text = "Add/Deduct Item :";
+            // 
+            // btnImport
+            // 
+            this.btnImport.Image = global::BLSystem.Properties.Resources.db_add;
+            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.Location = new System.Drawing.Point(18, 3);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(92, 45);
+            this.btnImport.TabIndex = 0;
+            this.btnImport.Text = "Import";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImport.UseVisualStyleBackColor = true;
+            // 
+            // FormTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 562);
-            this.Controls.Add(this.panelBot);
+            this.ClientSize = new System.Drawing.Size(1408, 527);
             this.Controls.Add(this.panelMid);
+            this.Controls.Add(this.panelBot);
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FormCompany";
-            this.Text = "Company Form";
-            this.Load += new System.EventHandler(this.FormCompany_Load);
+            this.Name = "FormTransaction";
+            this.Text = "Transaction Entry";
             this.panelTop.ResumeLayout(false);
+            this.panelBot.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
-            this.panelBot.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nAmt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nQty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,12 +346,18 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel panelMid;
         private System.Windows.Forms.Panel panelBot;
-        private System.Windows.Forms.DataGridView dgvCo;
-        private System.Windows.Forms.TextBox tbCompany;
-        private System.Windows.Forms.Label lco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Panel panelMid;
+        private System.Windows.Forms.NumericUpDown nAmt;
+        private System.Windows.Forms.Label lam;
+        private System.Windows.Forms.NumericUpDown nQty;
+        private System.Windows.Forms.Label lQt;
+        private System.Windows.Forms.ComboBox cboSup;
+        private System.Windows.Forms.Label lts;
+        private System.Windows.Forms.DateTimePicker dtTrnDate;
+        private System.Windows.Forms.Label ltd;
+        private System.Windows.Forms.ComboBox cboProduct;
+        private System.Windows.Forms.Label lti;
+        private System.Windows.Forms.Button btnImport;
     }
 }

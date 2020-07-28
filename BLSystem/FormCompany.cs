@@ -42,6 +42,7 @@ namespace BLSystem
             if ( contxt.CompanyMasters.ToList().Count > 0 && isFormLoading)
             {
                 companies = contxt.CompanyMasters.ToList();
+                dgvCo.AutoGenerateColumns = false;
                 dgvCo.DataSource = companies;
             }
             //throw new NotImplementedException();
