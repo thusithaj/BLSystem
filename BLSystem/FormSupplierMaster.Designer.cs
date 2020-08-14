@@ -206,6 +206,7 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnAdd_KeyUp);
             // 
             // panelMid
             // 
@@ -281,6 +282,7 @@
             this.cboRoute.Size = new System.Drawing.Size(257, 25);
             this.cboRoute.TabIndex = 35;
             this.cboRoute.SelectedIndexChanged += new System.EventHandler(this.cboRoute_SelectedIndexChanged);
+            this.cboRoute.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboRoute_KeyUp);
             // 
             // lrt
             // 
@@ -572,6 +574,7 @@
             this.cboFactory.Size = new System.Drawing.Size(213, 25);
             this.cboFactory.TabIndex = 3;
             this.cboFactory.SelectedIndexChanged += new System.EventHandler(this.cboFactory_SelectedIndexChanged);
+            this.cboFactory.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboFactory_KeyUp);
             // 
             // lF
             // 

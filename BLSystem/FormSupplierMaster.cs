@@ -428,6 +428,34 @@ namespace BLSystem
             //throw new NotImplementedException();
         }
 
+        private void btnAdd_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdd_Click(sender, new EventArgs());
+                cboType.Focus();
+            }
+        }
+
+        private void cboFactory_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cboFactory_SelectedIndexChanged(sender, new EventArgs());
+                cboRoute.Focus();
+            }
+        }
+
+        private void cboRoute_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode== Keys.Enter)
+            {
+                cboRoute_SelectedIndexChanged(sender, new EventArgs());
+                nRegNo.Focus();
+
+            }
+        }
+
         private void GetContents()
         {
             address.AddressName = tbName.Text;
