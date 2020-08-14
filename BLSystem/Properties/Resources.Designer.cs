@@ -183,6 +183,26 @@ namespace BLSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gnome_gnect {
+            get {
+                object obj = ResourceManager.GetObject("gnome-gnect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gnome_mastermind {
+            get {
+                object obj = ResourceManager.GetObject("gnome-mastermind", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gnomeicu {
             get {
                 object obj = ResourceManager.GetObject("gnomeicu", resourceCulture);

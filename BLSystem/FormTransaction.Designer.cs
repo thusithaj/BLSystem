@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTransaction));
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnImport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -38,7 +39,18 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panelBot = new System.Windows.Forms.Panel();
+            this.dgvSes = new System.Windows.Forms.DataGridView();
+            this.TrnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ref01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMid = new System.Windows.Forms.Panel();
+            this.tbRef = new System.Windows.Forms.TextBox();
+            this.lr = new System.Windows.Forms.Label();
+            this.cboTrType = new System.Windows.Forms.ComboBox();
+            this.lT = new System.Windows.Forms.Label();
             this.nAmt = new System.Windows.Forms.NumericUpDown();
             this.lam = new System.Windows.Forms.Label();
             this.nQty = new System.Windows.Forms.NumericUpDown();
@@ -49,9 +61,9 @@
             this.ltd = new System.Windows.Forms.Label();
             this.cboProduct = new System.Windows.Forms.ComboBox();
             this.lti = new System.Windows.Forms.Label();
-            this.btnImport = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.panelBot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSes)).BeginInit();
             this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nAmt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nQty)).BeginInit();
@@ -59,6 +71,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.btnImport);
             this.panelTop.Controls.Add(this.btnCancel);
             this.panelTop.Controls.Add(this.btnExit);
             this.panelTop.Controls.Add(this.btnSave);
@@ -71,7 +84,20 @@
             this.panelTop.Margin = new System.Windows.Forms.Padding(5);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1408, 59);
-            this.panelTop.TabIndex = 5;
+            this.panelTop.TabIndex = 0;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Image = global::BLSystem.Properties.Resources.db_add;
+            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.Location = new System.Drawing.Point(1032, 8);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(92, 45);
+            this.btnImport.TabIndex = 7;
+            this.btnImport.Text = "Import";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnCancel
             // 
@@ -81,7 +107,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 52);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -94,10 +120,11 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(5);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 52);
-            this.btnExit.TabIndex = 5;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "E&xit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -107,10 +134,12 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 52);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "&Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
             // 
             // btnDelete
             // 
@@ -163,18 +192,80 @@
             this.btnAdd.Text = "&New";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnAdd_KeyUp);
             // 
             // panelBot
             // 
-            this.panelBot.Controls.Add(this.btnImport);
+            this.panelBot.Controls.Add(this.dgvSes);
             this.panelBot.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBot.Location = new System.Drawing.Point(0, 458);
+            this.panelBot.Location = new System.Drawing.Point(0, 228);
             this.panelBot.Name = "panelBot";
-            this.panelBot.Size = new System.Drawing.Size(1408, 69);
+            this.panelBot.Size = new System.Drawing.Size(1408, 299);
             this.panelBot.TabIndex = 7;
+            // 
+            // dgvSes
+            // 
+            this.dgvSes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TrnDate,
+            this.Ref01,
+            this.ProductId,
+            this.ProductName,
+            this.Qty,
+            this.Amount});
+            this.dgvSes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSes.Location = new System.Drawing.Point(0, 0);
+            this.dgvSes.Name = "dgvSes";
+            this.dgvSes.RowTemplate.Height = 24;
+            this.dgvSes.Size = new System.Drawing.Size(1408, 299);
+            this.dgvSes.TabIndex = 0;
+            this.dgvSes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSes_CellDoubleClick);
+            // 
+            // TrnDate
+            // 
+            this.TrnDate.DataPropertyName = "TrnDate";
+            this.TrnDate.HeaderText = "Date";
+            this.TrnDate.Name = "TrnDate";
+            // 
+            // Ref01
+            // 
+            this.Ref01.DataPropertyName = "Ref01";
+            this.Ref01.HeaderText = "Type";
+            this.Ref01.Name = "Ref01";
+            // 
+            // ProductId
+            // 
+            this.ProductId.DataPropertyName = "ProductId";
+            this.ProductId.HeaderText = "ProductId";
+            this.ProductId.Name = "ProductId";
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "Product.ProductName";
+            this.ProductName.FillWeight = 200F;
+            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 200;
+            // 
+            // Qty
+            // 
+            this.Qty.DataPropertyName = "Quantity";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "TotalPrice";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.tbRef);
+            this.panelMid.Controls.Add(this.lr);
+            this.panelMid.Controls.Add(this.cboTrType);
+            this.panelMid.Controls.Add(this.lT);
             this.panelMid.Controls.Add(this.nAmt);
             this.panelMid.Controls.Add(this.lam);
             this.panelMid.Controls.Add(this.nQty);
@@ -188,13 +279,52 @@
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 59);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1408, 399);
-            this.panelMid.TabIndex = 8;
+            this.panelMid.Size = new System.Drawing.Size(1408, 169);
+            this.panelMid.TabIndex = 1;
+            // 
+            // tbRef
+            // 
+            this.tbRef.Location = new System.Drawing.Point(754, 114);
+            this.tbRef.Name = "tbRef";
+            this.tbRef.Size = new System.Drawing.Size(642, 23);
+            this.tbRef.TabIndex = 13;
+            this.tbRef.Enter += new System.EventHandler(this.tbRef_Enter);
+            this.tbRef.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRef_KeyUp);
+            // 
+            // lr
+            // 
+            this.lr.AutoSize = true;
+            this.lr.Location = new System.Drawing.Point(651, 115);
+            this.lr.Name = "lr";
+            this.lr.Size = new System.Drawing.Size(82, 17);
+            this.lr.TabIndex = 12;
+            this.lr.Text = "Reference :";
+            // 
+            // cboTrType
+            // 
+            this.cboTrType.FormattingEnabled = true;
+            this.cboTrType.Location = new System.Drawing.Point(170, 33);
+            this.cboTrType.Name = "cboTrType";
+            this.cboTrType.Size = new System.Drawing.Size(474, 25);
+            this.cboTrType.TabIndex = 1;
+            this.cboTrType.SelectedIndexChanged += new System.EventHandler(this.cboTrType_SelectedIndexChanged);
+            this.cboTrType.Enter += new System.EventHandler(this.cboTrType_Enter);
+            this.cboTrType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTrType_KeyDown);
+            this.cboTrType.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboTrType_KeyUp);
+            // 
+            // lT
+            // 
+            this.lT.AutoSize = true;
+            this.lT.Location = new System.Drawing.Point(98, 33);
+            this.lT.Name = "lT";
+            this.lT.Size = new System.Drawing.Size(48, 17);
+            this.lT.TabIndex = 0;
+            this.lT.Text = "Type :";
             // 
             // nAmt
             // 
             this.nAmt.DecimalPlaces = 2;
-            this.nAmt.Location = new System.Drawing.Point(853, 61);
+            this.nAmt.Location = new System.Drawing.Point(485, 113);
             this.nAmt.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -206,23 +336,25 @@
             0,
             -2147352576});
             this.nAmt.Name = "nAmt";
-            this.nAmt.Size = new System.Drawing.Size(159, 27);
-            this.nAmt.TabIndex = 9;
+            this.nAmt.Size = new System.Drawing.Size(159, 23);
+            this.nAmt.TabIndex = 11;
             this.nAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nAmt.Enter += new System.EventHandler(this.nAmt_Enter);
+            this.nAmt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nAmt_KeyUp);
             // 
             // lam
             // 
             this.lam.AutoSize = true;
-            this.lam.Location = new System.Drawing.Point(764, 62);
+            this.lam.Location = new System.Drawing.Point(403, 115);
             this.lam.Name = "lam";
-            this.lam.Size = new System.Drawing.Size(76, 20);
-            this.lam.TabIndex = 8;
+            this.lam.Size = new System.Drawing.Size(64, 17);
+            this.lam.TabIndex = 10;
             this.lam.Text = "Amount :";
             // 
             // nQty
             // 
             this.nQty.DecimalPlaces = 2;
-            this.nQty.Location = new System.Drawing.Point(573, 62);
+            this.nQty.Location = new System.Drawing.Point(169, 115);
             this.nQty.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -234,17 +366,19 @@
             0,
             -2147352576});
             this.nQty.Name = "nQty";
-            this.nQty.Size = new System.Drawing.Size(159, 27);
-            this.nQty.TabIndex = 7;
+            this.nQty.Size = new System.Drawing.Size(159, 23);
+            this.nQty.TabIndex = 9;
             this.nQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nQty.Enter += new System.EventHandler(this.nQty_Enter);
+            this.nQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nQty_KeyUp);
             // 
             // lQt
             // 
             this.lQt.AutoSize = true;
-            this.lQt.Location = new System.Drawing.Point(522, 64);
+            this.lQt.Location = new System.Drawing.Point(102, 113);
             this.lQt.Name = "lQt";
-            this.lQt.Size = new System.Drawing.Size(45, 20);
-            this.lQt.TabIndex = 6;
+            this.lQt.Size = new System.Drawing.Size(38, 17);
+            this.lQt.TabIndex = 8;
             this.lQt.Text = "Qty :";
             // 
             // cboSup
@@ -252,70 +386,66 @@
             this.cboSup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboSup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSup.FormattingEnabled = true;
-            this.cboSup.Location = new System.Drawing.Point(175, 61);
+            this.cboSup.Location = new System.Drawing.Point(754, 72);
             this.cboSup.Name = "cboSup";
-            this.cboSup.Size = new System.Drawing.Size(313, 28);
-            this.cboSup.TabIndex = 5;
+            this.cboSup.Size = new System.Drawing.Size(642, 25);
+            this.cboSup.TabIndex = 7;
+            this.cboSup.SelectedIndexChanged += new System.EventHandler(this.cboSup_SelectedIndexChanged);
+            this.cboSup.Enter += new System.EventHandler(this.cboSup_Enter);
+            this.cboSup.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboSup_KeyUp);
             // 
             // lts
             // 
             this.lts.AutoSize = true;
-            this.lts.Location = new System.Drawing.Point(78, 61);
+            this.lts.Location = new System.Drawing.Point(667, 72);
             this.lts.Name = "lts";
-            this.lts.Size = new System.Drawing.Size(80, 20);
-            this.lts.TabIndex = 4;
+            this.lts.Size = new System.Drawing.Size(68, 17);
+            this.lts.TabIndex = 6;
             this.lts.Text = "Supplier :";
             // 
             // dtTrnDate
             // 
             this.dtTrnDate.CustomFormat = "dd/MM/yyyy";
             this.dtTrnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtTrnDate.Location = new System.Drawing.Point(812, 21);
+            this.dtTrnDate.Location = new System.Drawing.Point(754, 33);
             this.dtTrnDate.Name = "dtTrnDate";
-            this.dtTrnDate.Size = new System.Drawing.Size(200, 27);
+            this.dtTrnDate.Size = new System.Drawing.Size(200, 23);
             this.dtTrnDate.TabIndex = 3;
+            this.dtTrnDate.Enter += new System.EventHandler(this.dtTrnDate_Enter);
+            this.dtTrnDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtTrnDate_KeyUp);
             // 
             // ltd
             // 
             this.ltd.AutoSize = true;
-            this.ltd.Location = new System.Drawing.Point(698, 26);
+            this.ltd.Location = new System.Drawing.Point(658, 33);
             this.ltd.Name = "ltd";
-            this.ltd.Size = new System.Drawing.Size(89, 20);
+            this.ltd.Size = new System.Drawing.Size(76, 17);
             this.ltd.TabIndex = 2;
             this.ltd.Text = "Trn. Date :";
             // 
             // cboProduct
             // 
             this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(175, 23);
+            this.cboProduct.Location = new System.Drawing.Point(170, 73);
             this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(474, 28);
-            this.cboProduct.TabIndex = 1;
+            this.cboProduct.Size = new System.Drawing.Size(474, 25);
+            this.cboProduct.TabIndex = 5;
+            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
+            this.cboProduct.Enter += new System.EventHandler(this.cboProduct_Enter);
+            this.cboProduct.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboProduct_KeyUp);
             // 
             // lti
             // 
             this.lti.AutoSize = true;
-            this.lti.Location = new System.Drawing.Point(14, 26);
+            this.lti.Location = new System.Drawing.Point(100, 73);
             this.lti.Name = "lti";
-            this.lti.Size = new System.Drawing.Size(144, 20);
-            this.lti.TabIndex = 0;
-            this.lti.Text = "Add/Deduct Item :";
-            // 
-            // btnImport
-            // 
-            this.btnImport.Image = global::BLSystem.Properties.Resources.db_add;
-            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.Location = new System.Drawing.Point(18, 3);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(92, 45);
-            this.btnImport.TabIndex = 0;
-            this.btnImport.Text = "Import";
-            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImport.UseVisualStyleBackColor = true;
+            this.lti.Size = new System.Drawing.Size(42, 17);
+            this.lti.TabIndex = 4;
+            this.lti.Text = "Item :";
             // 
             // FormTransaction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1408, 527);
             this.Controls.Add(this.panelMid);
@@ -323,11 +453,13 @@
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTransaction";
             this.Text = "Transaction Entry";
+            this.Load += new System.EventHandler(this.FormTransaction_Load);
             this.panelTop.ResumeLayout(false);
             this.panelBot.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSes)).EndInit();
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nAmt)).EndInit();
@@ -359,5 +491,16 @@
         private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.Label lti;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.ComboBox cboTrType;
+        private System.Windows.Forms.Label lT;
+        private System.Windows.Forms.DataGridView dgvSes;
+        private System.Windows.Forms.TextBox tbRef;
+        private System.Windows.Forms.Label lr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrnDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ref01;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
     }
 }

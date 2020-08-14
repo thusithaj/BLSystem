@@ -19,10 +19,18 @@ namespace BLSystem
 
         public int? RouteId { get; set; }
 
+        public int? SupplierId { get; set; }
+
         [Column(TypeName = "date")]
         public DateTime? Trndate { get; set; }
 
         public decimal? Quantity { get; set; }
+
+        public decimal? GrossAmt { get; set; }
+
+        public decimal? DeductAmt { get; set; }
+
+        public decimal? BalanceAmt { get; set; }
 
         public int? ProductId { get; set; }
 

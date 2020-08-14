@@ -45,14 +45,38 @@ namespace BLSystem
             route = new AddressBook();
             factory = new FactoryMaster();
             supplier = new SupplierMaster();
-            TypeName = "Suppliers";
+            //TypeName = "Suppliers";
             GetAddressBookTypeList();
             GetRoutes();
             GetFactories();
             state = FORMSTATE.NOOP;
             SetButtons();
             panelMid.Enabled = false;
+            AdjustFields();
+            LoadPartners();
             isFormLoading = false;
+        }
+
+        private void LoadPartners()
+        {
+            dgvPatner.DataSource = contxt.AddressBooks.Where(o => o.AddressBookType.BookTypeName.Trim() == TypeName).ToList();
+            //throw new NotImplementedException();
+        }
+
+        private void AdjustFields()
+        {
+            if (TypeName == "Customers")
+            {
+                lwfn.Text = "Ref No :";
+                chkbSaving.Visible = false;
+                chkbWF.Visible = false;
+                lWD.Visible = false;
+                ls.Visible = false;
+                dtWRegDate.Visible = false;
+                dtSDate.Visible = false;
+                tc01.TabPages[0].Text = TypeName;
+            }
+            //throw new NotImplementedException();
         }
 
         private void GetRoutes()
@@ -172,6 +196,7 @@ namespace BLSystem
                     book.City = address.City;
                     book.ModifiedBy = 1;
                     book.ModifiedDate = DateTime.Now;
+                    contxt.Entry(book).State = System.Data.Entity.EntityState.Modified;
                     contxt.SaveChanges();
                     SupplierMaster master = contxt.SupplierMasters.Where(o => o.id == supplier.id).FirstOrDefault();
                     if(master != null)
@@ -186,6 +211,7 @@ namespace BLSystem
                         master.WelfareRegDate = supplier.WelfareRegDate;
                         master.WelfareRegistered = supplier.WelfareRegistered;
                         master.Status = supplier.Status;
+                        contxt.Entry(master).State = System.Data.Entity.EntityState.Modified;
                         contxt.SaveChanges();
 
                     }
@@ -221,7 +247,9 @@ namespace BLSystem
                 isNew = false; isEdit = false;
                 state = FORMSTATE.NOOP;
                 SetButtons();
-                MessageBox.Show("Supplier added successfully");
+                MessageBox.Show("Supplier Saved successfully");
+                panelMid.Enabled = false;
+                btnAdd.Focus();
             }
             catch(Exception ex)
             {
@@ -364,8 +392,45 @@ namespace BLSystem
             route = (AddressBook)cboRoute.SelectedItem;
         }
 
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPatner_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            address = (AddressBook) dgvPatner.Rows[e.RowIndex].DataBoundItem;
+            supplier = contxt.SupplierMasters.FirstOrDefault(o => o.AddressBookId == address.id);
+            ShowContents();
+            state = FORMSTATE.EDIT;
+            isNew = false;isEdit = true;
+            SetButtons();
+            panelMid.Enabled = true;
+        }
+
+        private void ShowContents()
+        {
+            tbName.Text = address.AddressName;
+            tbAL01.Text = address.AddressLine01;
+            tbAL02.Text = address.AddressLine02;
+            tbCity.Text = address.City;
+            bookType = bookTypes.FirstOrDefault(o => o.id == address.AddressType);
+            cboType.SelectedItem = bookType;
+            factory = factories.FirstOrDefault(o => o.id == address.FactoryId);
+            nRegNo.Value = supplier.RegNo;
+            chkbSaving.Checked = supplier.SavingRegistered == 1 ? true : false;
+            chkbWF.Checked= supplier.WelfareRegistered == 1 ? true : false;
+            chkbStatus.Checked = supplier.Status == 1 ? true : false;
+            chkbDel.Checked = supplier.Deleted == 1 ? true : false;
+            route = routes.FirstOrDefault(o => o.id == supplier.RouteId);
+            dtRegDate.Value = supplier.RegDate.Value;
+            tbWelfareId.Text = supplier.WelfareId;
+            //throw new NotImplementedException();
+        }
+
         private void GetContents()
         {
+            address.AddressName = tbName.Text;
             address.AddressLine01 = tbAL01.Text;
             address.AddressLine02 = tbAL02.Text;
             address.City = tbCity.Text;
@@ -379,7 +444,7 @@ namespace BLSystem
             supplier.Deleted = chkbDel.Checked ? 1 : 0;
             supplier.RouteId = route.id;
             supplier.RegDate = dtRegDate.Value;
-
+            supplier.WelfareId = tbWelfareId.Text;
         }
     }
 }

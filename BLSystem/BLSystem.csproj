@@ -216,6 +216,8 @@
     <None Include="Resources\gnome-chess.ico" />
     <None Include="Resources\gnome-fs-blockdev.ico" />
     <None Include="Resources\gnomeicu.ico" />
+    <None Include="Resources\gnome-gnect.ico" />
+    <None Include="Resources\gnome-mastermind.ico" />
     <Content Include="TeaLeafIcon.ico" />
   </ItemGroup>
   <ItemGroup />

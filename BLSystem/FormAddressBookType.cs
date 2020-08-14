@@ -123,6 +123,8 @@ namespace BLSystem
                 isNew = false; isEdit = false;
                 state = FORMSTATE.NOOP;
                 SetButtons();
+                ClearContents();
+                panelMid.Enabled = false;
                 MessageBox.Show(" Record Saved ");
             }
             catch( Exception ex)

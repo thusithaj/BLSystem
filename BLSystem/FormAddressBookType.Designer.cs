@@ -39,6 +39,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.panelMid = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboCom = new System.Windows.Forms.ComboBox();
+            this.lco = new System.Windows.Forms.Label();
             this.tbABTypeName = new System.Windows.Forms.TextBox();
             this.lTName = new System.Windows.Forms.Label();
             this.lc03 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.Cat02 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cat03 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lco = new System.Windows.Forms.Label();
-            this.cboCom = new System.Windows.Forms.ComboBox();
             this.panelTop.SuspendLayout();
             this.panelMid.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -209,6 +209,26 @@
             this.panel1.Size = new System.Drawing.Size(1384, 276);
             this.panel1.TabIndex = 4;
             // 
+            // cboCom
+            // 
+            this.cboCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCom.FormattingEnabled = true;
+            this.cboCom.Location = new System.Drawing.Point(145, 226);
+            this.cboCom.Name = "cboCom";
+            this.cboCom.Size = new System.Drawing.Size(436, 28);
+            this.cboCom.TabIndex = 10;
+            this.cboCom.SelectedIndexChanged += new System.EventHandler(this.cboCom_SelectedIndexChanged);
+            // 
+            // lco
+            // 
+            this.lco.AutoSize = true;
+            this.lco.Location = new System.Drawing.Point(26, 226);
+            this.lco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lco.Name = "lco";
+            this.lco.Size = new System.Drawing.Size(89, 20);
+            this.lco.TabIndex = 9;
+            this.lco.Text = "Company :";
+            // 
             // tbABTypeName
             // 
             this.tbABTypeName.Location = new System.Drawing.Point(145, 21);
@@ -250,6 +270,14 @@
             // 
             // tbCat01
             // 
+            this.tbCat01.AutoCompleteCustomSource.AddRange(new string[] {
+            "Purchase",
+            "Sales",
+            "Routes",
+            "None",
+            "Financial"});
+            this.tbCat01.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbCat01.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbCat01.Location = new System.Drawing.Point(145, 70);
             this.tbCat01.Margin = new System.Windows.Forms.Padding(4);
             this.tbCat01.Name = "tbCat01";
@@ -362,26 +390,6 @@
             this.ID.DataPropertyName = "id";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
-            // 
-            // lco
-            // 
-            this.lco.AutoSize = true;
-            this.lco.Location = new System.Drawing.Point(26, 226);
-            this.lco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lco.Name = "lco";
-            this.lco.Size = new System.Drawing.Size(89, 20);
-            this.lco.TabIndex = 9;
-            this.lco.Text = "Company :";
-            // 
-            // cboCom
-            // 
-            this.cboCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCom.FormattingEnabled = true;
-            this.cboCom.Location = new System.Drawing.Point(145, 226);
-            this.cboCom.Name = "cboCom";
-            this.cboCom.Size = new System.Drawing.Size(436, 28);
-            this.cboCom.TabIndex = 10;
-            this.cboCom.SelectedIndexChanged += new System.EventHandler(this.cboCom_SelectedIndexChanged);
             // 
             // formAddressBookType
             // 

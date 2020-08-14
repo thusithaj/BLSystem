@@ -24,6 +24,7 @@ namespace BLSystem
         FORMSTATE state;
         OldBlObj old;
         bool isFormLoading = true;
+        public string FormType { get; set; }
         public FormAddressBook()
         {
             InitializeComponent();
@@ -73,7 +74,7 @@ namespace BLSystem
         {
             if (contxt.AddressBookTypes.ToList().Count > 0)
             {
-                bookTypes = contxt.AddressBookTypes.ToList();
+                bookTypes = contxt.AddressBookTypes.Where(o=>o.Category01== FormType).ToList();
                 cboType.DataSource = bookTypes;
                 cboType.DisplayMember = "BookTypeName";
                 cboType.ValueMember = "id";

@@ -30,6 +30,12 @@ namespace BLSystem
 
         public int? ExtraId { get; set; }
 
+        [StringLength(50)]
+        public string Ref01 { get; set; }
+
+        [StringLength(50)]
+        public string Ref02 { get; set; }
+
         public int? CreatedBy { get; set; }
 
         public DateTime? CreatedDate { get; set; }
