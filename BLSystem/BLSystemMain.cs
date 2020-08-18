@@ -64,10 +64,22 @@ namespace BLSystem
 
         private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormPriceList childForm = new FormPriceList();
+            childForm.formMode = "Purchase";
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
         }
 
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormPriceList childForm = new FormPriceList();
+            childForm.formMode = "Sales";
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
         }
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,6 +176,11 @@ namespace BLSystem
             //childForm.Text = "Window " + childFormNumber++;
             childForm.WindowState = FormWindowState.Maximized;
             childForm.Show();
+        }
+
+        private void BLSystemMain_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

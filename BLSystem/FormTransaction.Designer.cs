@@ -284,9 +284,10 @@
             // 
             // tbRef
             // 
+            this.tbRef.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbRef.Location = new System.Drawing.Point(754, 114);
             this.tbRef.Name = "tbRef";
-            this.tbRef.Size = new System.Drawing.Size(642, 23);
+            this.tbRef.Size = new System.Drawing.Size(642, 27);
             this.tbRef.TabIndex = 13;
             this.tbRef.Enter += new System.EventHandler(this.tbRef_Enter);
             this.tbRef.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRef_KeyUp);
@@ -296,7 +297,7 @@
             this.lr.AutoSize = true;
             this.lr.Location = new System.Drawing.Point(651, 115);
             this.lr.Name = "lr";
-            this.lr.Size = new System.Drawing.Size(82, 17);
+            this.lr.Size = new System.Drawing.Size(96, 20);
             this.lr.TabIndex = 12;
             this.lr.Text = "Reference :";
             // 
@@ -305,7 +306,7 @@
             this.cboTrType.FormattingEnabled = true;
             this.cboTrType.Location = new System.Drawing.Point(170, 33);
             this.cboTrType.Name = "cboTrType";
-            this.cboTrType.Size = new System.Drawing.Size(474, 25);
+            this.cboTrType.Size = new System.Drawing.Size(474, 28);
             this.cboTrType.TabIndex = 1;
             this.cboTrType.SelectedIndexChanged += new System.EventHandler(this.cboTrType_SelectedIndexChanged);
             this.cboTrType.Enter += new System.EventHandler(this.cboTrType_Enter);
@@ -317,7 +318,7 @@
             this.lT.AutoSize = true;
             this.lT.Location = new System.Drawing.Point(98, 33);
             this.lT.Name = "lT";
-            this.lT.Size = new System.Drawing.Size(48, 17);
+            this.lT.Size = new System.Drawing.Size(55, 20);
             this.lT.TabIndex = 0;
             this.lT.Text = "Type :";
             // 
@@ -336,7 +337,7 @@
             0,
             -2147352576});
             this.nAmt.Name = "nAmt";
-            this.nAmt.Size = new System.Drawing.Size(159, 23);
+            this.nAmt.Size = new System.Drawing.Size(159, 27);
             this.nAmt.TabIndex = 11;
             this.nAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nAmt.Enter += new System.EventHandler(this.nAmt_Enter);
@@ -347,7 +348,7 @@
             this.lam.AutoSize = true;
             this.lam.Location = new System.Drawing.Point(403, 115);
             this.lam.Name = "lam";
-            this.lam.Size = new System.Drawing.Size(64, 17);
+            this.lam.Size = new System.Drawing.Size(76, 20);
             this.lam.TabIndex = 10;
             this.lam.Text = "Amount :";
             // 
@@ -366,7 +367,7 @@
             0,
             -2147352576});
             this.nQty.Name = "nQty";
-            this.nQty.Size = new System.Drawing.Size(159, 23);
+            this.nQty.Size = new System.Drawing.Size(159, 27);
             this.nQty.TabIndex = 9;
             this.nQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nQty.Enter += new System.EventHandler(this.nQty_Enter);
@@ -377,7 +378,7 @@
             this.lQt.AutoSize = true;
             this.lQt.Location = new System.Drawing.Point(102, 113);
             this.lQt.Name = "lQt";
-            this.lQt.Size = new System.Drawing.Size(38, 17);
+            this.lQt.Size = new System.Drawing.Size(45, 20);
             this.lQt.TabIndex = 8;
             this.lQt.Text = "Qty :";
             // 
@@ -388,7 +389,7 @@
             this.cboSup.FormattingEnabled = true;
             this.cboSup.Location = new System.Drawing.Point(754, 72);
             this.cboSup.Name = "cboSup";
-            this.cboSup.Size = new System.Drawing.Size(642, 25);
+            this.cboSup.Size = new System.Drawing.Size(642, 28);
             this.cboSup.TabIndex = 7;
             this.cboSup.SelectedIndexChanged += new System.EventHandler(this.cboSup_SelectedIndexChanged);
             this.cboSup.Enter += new System.EventHandler(this.cboSup_Enter);
@@ -399,7 +400,7 @@
             this.lts.AutoSize = true;
             this.lts.Location = new System.Drawing.Point(667, 72);
             this.lts.Name = "lts";
-            this.lts.Size = new System.Drawing.Size(68, 17);
+            this.lts.Size = new System.Drawing.Size(80, 20);
             this.lts.TabIndex = 6;
             this.lts.Text = "Supplier :";
             // 
@@ -409,7 +410,7 @@
             this.dtTrnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtTrnDate.Location = new System.Drawing.Point(754, 33);
             this.dtTrnDate.Name = "dtTrnDate";
-            this.dtTrnDate.Size = new System.Drawing.Size(200, 23);
+            this.dtTrnDate.Size = new System.Drawing.Size(200, 27);
             this.dtTrnDate.TabIndex = 3;
             this.dtTrnDate.Enter += new System.EventHandler(this.dtTrnDate_Enter);
             this.dtTrnDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtTrnDate_KeyUp);
@@ -419,7 +420,7 @@
             this.ltd.AutoSize = true;
             this.ltd.Location = new System.Drawing.Point(658, 33);
             this.ltd.Name = "ltd";
-            this.ltd.Size = new System.Drawing.Size(76, 17);
+            this.ltd.Size = new System.Drawing.Size(89, 20);
             this.ltd.TabIndex = 2;
             this.ltd.Text = "Trn. Date :";
             // 
@@ -428,7 +429,7 @@
             this.cboProduct.FormattingEnabled = true;
             this.cboProduct.Location = new System.Drawing.Point(170, 73);
             this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(474, 25);
+            this.cboProduct.Size = new System.Drawing.Size(474, 28);
             this.cboProduct.TabIndex = 5;
             this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
             this.cboProduct.Enter += new System.EventHandler(this.cboProduct_Enter);
@@ -439,13 +440,13 @@
             this.lti.AutoSize = true;
             this.lti.Location = new System.Drawing.Point(100, 73);
             this.lti.Name = "lti";
-            this.lti.Size = new System.Drawing.Size(42, 17);
+            this.lti.Size = new System.Drawing.Size(51, 20);
             this.lti.TabIndex = 4;
             this.lti.Text = "Item :";
             // 
             // FormTransaction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1408, 527);
             this.Controls.Add(this.panelMid);

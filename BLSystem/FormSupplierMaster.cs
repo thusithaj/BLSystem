@@ -380,6 +380,8 @@ namespace BLSystem
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
             bookType = (AddressBookType) cboType.SelectedItem;
+            if (bookType != null)
+                cboFactory.Focus();
         }
 
         private void cboFactory_SelectedIndexChanged(object sender, EventArgs e)

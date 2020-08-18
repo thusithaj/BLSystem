@@ -65,6 +65,12 @@
     <Compile Include="FormImportTrn.Designer.cs">
       <DependentUpon>FormImportTrn.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPriceList.Designer.cs">
+      <DependentUpon>FormPriceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormImportTrn.resx">
       <DependentUpon>FormImportTrn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPriceList.resx">
+      <DependentUpon>FormPriceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>

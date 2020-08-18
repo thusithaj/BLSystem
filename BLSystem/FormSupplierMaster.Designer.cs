@@ -260,7 +260,7 @@
             this.dtRegDate.Location = new System.Drawing.Point(966, 203);
             this.dtRegDate.Name = "dtRegDate";
             this.dtRegDate.Size = new System.Drawing.Size(193, 23);
-            this.dtRegDate.TabIndex = 37;
+            this.dtRegDate.TabIndex = 29;
             // 
             // label2
             // 
@@ -268,7 +268,7 @@
             this.label2.Location = new System.Drawing.Point(818, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 17);
-            this.label2.TabIndex = 36;
+            this.label2.TabIndex = 28;
             this.label2.Text = "Registered Date :";
             // 
             // cboRoute
@@ -280,7 +280,7 @@
             this.cboRoute.Location = new System.Drawing.Point(902, 30);
             this.cboRoute.Name = "cboRoute";
             this.cboRoute.Size = new System.Drawing.Size(257, 25);
-            this.cboRoute.TabIndex = 35;
+            this.cboRoute.TabIndex = 5;
             this.cboRoute.SelectedIndexChanged += new System.EventHandler(this.cboRoute_SelectedIndexChanged);
             this.cboRoute.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboRoute_KeyUp);
             // 
@@ -290,7 +290,7 @@
             this.lrt.Location = new System.Drawing.Point(821, 33);
             this.lrt.Name = "lrt";
             this.lrt.Size = new System.Drawing.Size(54, 17);
-            this.lrt.TabIndex = 34;
+            this.lrt.TabIndex = 4;
             this.lrt.Text = "Route :";
             // 
             // tbemail
@@ -298,7 +298,7 @@
             this.tbemail.Location = new System.Drawing.Point(145, 284);
             this.tbemail.Name = "tbemail";
             this.tbemail.Size = new System.Drawing.Size(449, 23);
-            this.tbemail.TabIndex = 33;
+            this.tbemail.TabIndex = 35;
             // 
             // label1
             // 
@@ -306,7 +306,7 @@
             this.label1.Location = new System.Drawing.Point(74, 287);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 17);
-            this.label1.TabIndex = 32;
+            this.label1.TabIndex = 34;
             this.label1.Text = "Email :";
             // 
             // tbtp02
@@ -314,7 +314,7 @@
             this.tbtp02.Location = new System.Drawing.Point(724, 241);
             this.tbtp02.Name = "tbtp02";
             this.tbtp02.Size = new System.Drawing.Size(435, 23);
-            this.tbtp02.TabIndex = 31;
+            this.tbtp02.TabIndex = 33;
             // 
             // ltp02
             // 
@@ -322,7 +322,7 @@
             this.ltp02.Location = new System.Drawing.Point(601, 244);
             this.ltp02.Name = "ltp02";
             this.ltp02.Size = new System.Drawing.Size(100, 17);
-            this.ltp02.TabIndex = 30;
+            this.ltp02.TabIndex = 32;
             this.ltp02.Text = "Telephone 02:";
             // 
             // tbTp01
@@ -330,7 +330,7 @@
             this.tbTp01.Location = new System.Drawing.Point(145, 241);
             this.tbTp01.Name = "tbTp01";
             this.tbTp01.Size = new System.Drawing.Size(449, 23);
-            this.tbTp01.TabIndex = 29;
+            this.tbTp01.TabIndex = 31;
             // 
             // ltp01
             // 
@@ -338,7 +338,7 @@
             this.ltp01.Location = new System.Drawing.Point(22, 244);
             this.ltp01.Name = "ltp01";
             this.ltp01.Size = new System.Drawing.Size(100, 17);
-            this.ltp01.TabIndex = 28;
+            this.ltp01.TabIndex = 30;
             this.ltp01.Text = "Telephone 01:";
             // 
             // pnlimp
@@ -373,7 +373,7 @@
             this.chkbDel.Location = new System.Drawing.Point(515, 207);
             this.chkbDel.Name = "chkbDel";
             this.chkbDel.Size = new System.Drawing.Size(76, 21);
-            this.chkbDel.TabIndex = 25;
+            this.chkbDel.TabIndex = 27;
             this.chkbDel.Text = "Deleted";
             this.chkbDel.UseVisualStyleBackColor = true;
             // 
@@ -384,7 +384,7 @@
             this.dtLLD.Location = new System.Drawing.Point(295, 205);
             this.dtLLD.Name = "dtLLD";
             this.dtLLD.Size = new System.Drawing.Size(193, 23);
-            this.dtLLD.TabIndex = 24;
+            this.dtLLD.TabIndex = 26;
             // 
             // lLfd
             // 
@@ -392,7 +392,7 @@
             this.lLfd.Location = new System.Drawing.Point(141, 208);
             this.lLfd.Name = "lLfd";
             this.lLfd.Size = new System.Drawing.Size(124, 17);
-            this.lLfd.TabIndex = 23;
+            this.lLfd.TabIndex = 25;
             this.lLfd.Text = "Last Supply Date :";
             // 
             // chkbStatus
@@ -401,7 +401,7 @@
             this.chkbStatus.Location = new System.Drawing.Point(60, 208);
             this.chkbStatus.Name = "chkbStatus";
             this.chkbStatus.Size = new System.Drawing.Size(67, 21);
-            this.chkbStatus.TabIndex = 22;
+            this.chkbStatus.TabIndex = 24;
             this.chkbStatus.Text = "Status";
             this.chkbStatus.UseVisualStyleBackColor = true;
             // 
@@ -410,7 +410,7 @@
             this.tbWelfareId.Location = new System.Drawing.Point(143, 165);
             this.tbWelfareId.Name = "tbWelfareId";
             this.tbWelfareId.Size = new System.Drawing.Size(449, 23);
-            this.tbWelfareId.TabIndex = 18;
+            this.tbWelfareId.TabIndex = 20;
             // 
             // lwfn
             // 
@@ -418,7 +418,7 @@
             this.lwfn.Location = new System.Drawing.Point(34, 165);
             this.lwfn.Name = "lwfn";
             this.lwfn.Size = new System.Drawing.Size(87, 17);
-            this.lwfn.TabIndex = 17;
+            this.lwfn.TabIndex = 19;
             this.lwfn.Text = "Welfare No :";
             // 
             // dtSDate
@@ -428,7 +428,7 @@
             this.dtSDate.Location = new System.Drawing.Point(966, 165);
             this.dtSDate.Name = "dtSDate";
             this.dtSDate.Size = new System.Drawing.Size(193, 23);
-            this.dtSDate.TabIndex = 21;
+            this.dtSDate.TabIndex = 23;
             // 
             // ls
             // 
@@ -436,7 +436,7 @@
             this.ls.Location = new System.Drawing.Point(805, 165);
             this.ls.Name = "ls";
             this.ls.Size = new System.Drawing.Size(131, 17);
-            this.ls.TabIndex = 20;
+            this.ls.TabIndex = 22;
             this.ls.Text = "Saving  Reg. Date :";
             // 
             // chkbSaving
@@ -445,7 +445,7 @@
             this.chkbSaving.Location = new System.Drawing.Point(609, 165);
             this.chkbSaving.Name = "chkbSaving";
             this.chkbSaving.Size = new System.Drawing.Size(143, 21);
-            this.chkbSaving.TabIndex = 19;
+            this.chkbSaving.TabIndex = 21;
             this.chkbSaving.Text = "Saving Registered";
             this.chkbSaving.UseVisualStyleBackColor = true;
             // 
@@ -456,7 +456,7 @@
             this.dtWRegDate.Location = new System.Drawing.Point(966, 132);
             this.dtWRegDate.Name = "dtWRegDate";
             this.dtWRegDate.Size = new System.Drawing.Size(193, 23);
-            this.dtWRegDate.TabIndex = 16;
+            this.dtWRegDate.TabIndex = 18;
             // 
             // lWD
             // 
@@ -464,7 +464,7 @@
             this.lWD.Location = new System.Drawing.Point(797, 132);
             this.lWD.Name = "lWD";
             this.lWD.Size = new System.Drawing.Size(137, 17);
-            this.lWD.TabIndex = 15;
+            this.lWD.TabIndex = 17;
             this.lWD.Text = "Welfare  Reg. Date :";
             // 
             // chkbWF
@@ -473,7 +473,7 @@
             this.chkbWF.Location = new System.Drawing.Point(609, 132);
             this.chkbWF.Name = "chkbWF";
             this.chkbWF.Size = new System.Drawing.Size(149, 21);
-            this.chkbWF.TabIndex = 14;
+            this.chkbWF.TabIndex = 16;
             this.chkbWF.Text = "Welfare Registered";
             this.chkbWF.UseVisualStyleBackColor = true;
             // 
@@ -487,7 +487,7 @@
             0});
             this.nRegNo.Name = "nRegNo";
             this.nRegNo.Size = new System.Drawing.Size(120, 23);
-            this.nRegNo.TabIndex = 5;
+            this.nRegNo.TabIndex = 7;
             // 
             // lRNo
             // 
@@ -495,7 +495,7 @@
             this.lRNo.Location = new System.Drawing.Point(66, 65);
             this.lRNo.Name = "lRNo";
             this.lRNo.Size = new System.Drawing.Size(64, 17);
-            this.lRNo.TabIndex = 4;
+            this.lRNo.TabIndex = 6;
             this.lRNo.Text = "Reg No :";
             // 
             // tbCity
@@ -503,7 +503,7 @@
             this.tbCity.Location = new System.Drawing.Point(145, 129);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(449, 23);
-            this.tbCity.TabIndex = 13;
+            this.tbCity.TabIndex = 15;
             // 
             // lcity
             // 
@@ -511,7 +511,7 @@
             this.lcity.Location = new System.Drawing.Point(95, 132);
             this.lcity.Name = "lcity";
             this.lcity.Size = new System.Drawing.Size(35, 17);
-            this.lcity.TabIndex = 12;
+            this.lcity.TabIndex = 14;
             this.lcity.Text = "City:";
             // 
             // tbAL02
@@ -519,7 +519,7 @@
             this.tbAL02.Location = new System.Drawing.Point(747, 98);
             this.tbAL02.Name = "tbAL02";
             this.tbAL02.Size = new System.Drawing.Size(412, 23);
-            this.tbAL02.TabIndex = 11;
+            this.tbAL02.TabIndex = 13;
             // 
             // lAl02
             // 
@@ -527,7 +527,7 @@
             this.lAl02.Location = new System.Drawing.Point(605, 101);
             this.lAl02.Name = "lAl02";
             this.lAl02.Size = new System.Drawing.Size(115, 17);
-            this.lAl02.TabIndex = 10;
+            this.lAl02.TabIndex = 12;
             this.lAl02.Text = "Address Line 02:";
             // 
             // tbAL01
@@ -535,7 +535,7 @@
             this.tbAL01.Location = new System.Drawing.Point(145, 96);
             this.tbAL01.Name = "tbAL01";
             this.tbAL01.Size = new System.Drawing.Size(449, 23);
-            this.tbAL01.TabIndex = 9;
+            this.tbAL01.TabIndex = 11;
             // 
             // la01
             // 
@@ -543,7 +543,7 @@
             this.la01.Location = new System.Drawing.Point(2, 99);
             this.la01.Name = "la01";
             this.la01.Size = new System.Drawing.Size(115, 17);
-            this.la01.TabIndex = 8;
+            this.la01.TabIndex = 10;
             this.la01.Text = "Address Line 01:";
             // 
             // tbName
@@ -551,7 +551,7 @@
             this.tbName.Location = new System.Drawing.Point(466, 65);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(693, 23);
-            this.tbName.TabIndex = 7;
+            this.tbName.TabIndex = 9;
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // ln
@@ -560,7 +560,7 @@
             this.ln.Location = new System.Drawing.Point(382, 68);
             this.ln.Name = "ln";
             this.ln.Size = new System.Drawing.Size(53, 17);
-            this.ln.TabIndex = 6;
+            this.ln.TabIndex = 8;
             this.ln.Text = "Name :";
             // 
             // cboFactory

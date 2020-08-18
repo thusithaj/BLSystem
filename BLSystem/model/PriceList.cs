@@ -13,6 +13,8 @@ namespace BLSystem
 
         public int? PriceListType { get; set; }
 
+        public int? PartnerId { get; set; }
+
         public int? ProductId { get; set; }
 
         [Column(TypeName = "money")]
