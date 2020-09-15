@@ -30,7 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddressBook));
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panelMid = new System.Windows.Forms.Panel();
+            this.panelMBot = new System.Windows.Forms.Panel();
+            this.lmsg = new System.Windows.Forms.Label();
+            this.pgAb = new System.Windows.Forms.ProgressBar();
+            this.btnImport = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbAL02 = new System.Windows.Forms.TextBox();
@@ -50,22 +61,11 @@
             this.AddL02 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelMBot = new System.Windows.Forms.Panel();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.pgAb = new System.Windows.Forms.ProgressBar();
-            this.lmsg = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.panelMid.SuspendLayout();
+            this.panelMBot.SuspendLayout();
             this.panelBot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAB)).BeginInit();
-            this.panelMBot.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -83,6 +83,101 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1215, 72);
             this.panelTop.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::BLSystem.Properties.Resources.db_add;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(626, 16);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 52);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = global::BLSystem.Properties.Resources.application_exit;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(882, 19);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(106, 52);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::BLSystem.Properties.Resources.document_save_5;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(754, 18);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 52);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "&Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::BLSystem.Properties.Resources.edit_delete_6;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(420, 15);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(106, 52);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "&Delete";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::BLSystem.Properties.Resources.document_quick_restart1;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(286, 15);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(106, 52);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::BLSystem.Properties.Resources.edit_3;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(152, 15);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(106, 52);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "&Edit";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::BLSystem.Properties.Resources.address_book_new;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(18, 15);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(106, 52);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "&New";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelMid
             // 
@@ -104,6 +199,47 @@
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1215, 263);
             this.panelMid.TabIndex = 2;
+            // 
+            // panelMBot
+            // 
+            this.panelMBot.Controls.Add(this.lmsg);
+            this.panelMBot.Controls.Add(this.pgAb);
+            this.panelMBot.Controls.Add(this.btnImport);
+            this.panelMBot.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMBot.Location = new System.Drawing.Point(0, 212);
+            this.panelMBot.Name = "panelMBot";
+            this.panelMBot.Size = new System.Drawing.Size(1215, 51);
+            this.panelMBot.TabIndex = 12;
+            // 
+            // lmsg
+            // 
+            this.lmsg.AutoSize = true;
+            this.lmsg.ForeColor = System.Drawing.Color.Brown;
+            this.lmsg.Location = new System.Drawing.Point(512, 19);
+            this.lmsg.Name = "lmsg";
+            this.lmsg.Size = new System.Drawing.Size(21, 20);
+            this.lmsg.TabIndex = 2;
+            this.lmsg.Text = "...";
+            // 
+            // pgAb
+            // 
+            this.pgAb.Location = new System.Drawing.Point(174, 16);
+            this.pgAb.Name = "pgAb";
+            this.pgAb.Size = new System.Drawing.Size(298, 23);
+            this.pgAb.TabIndex = 1;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Image = global::BLSystem.Properties.Resources.gnome_fs_blockdev;
+            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.Location = new System.Drawing.Point(49, 3);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(93, 48);
+            this.btnImport.TabIndex = 0;
+            this.btnImport.Text = "&Import";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // textBox1
             // 
@@ -266,141 +402,6 @@
             this.ID.HeaderText = "id";
             this.ID.Name = "ID";
             // 
-            // panelMBot
-            // 
-            this.panelMBot.Controls.Add(this.lmsg);
-            this.panelMBot.Controls.Add(this.pgAb);
-            this.panelMBot.Controls.Add(this.btnImport);
-            this.panelMBot.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMBot.Location = new System.Drawing.Point(0, 212);
-            this.panelMBot.Name = "panelMBot";
-            this.panelMBot.Size = new System.Drawing.Size(1215, 51);
-            this.panelMBot.TabIndex = 12;
-            // 
-            // btnImport
-            // 
-            this.btnImport.Image = global::BLSystem.Properties.Resources.gnome_fs_blockdev;
-            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.Location = new System.Drawing.Point(49, 3);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(93, 48);
-            this.btnImport.TabIndex = 0;
-            this.btnImport.Text = "&Import";
-            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Image = global::BLSystem.Properties.Resources.db_add;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(626, 16);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 52);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "&Cancel";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Image = global::BLSystem.Properties.Resources.application_exit;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(882, 19);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(106, 52);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "E&xit";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::BLSystem.Properties.Resources.document_save_5;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(754, 18);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 52);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "&Save";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::BLSystem.Properties.Resources.edit_delete_6;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(420, 15);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(106, 52);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "&Delete";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::BLSystem.Properties.Resources.document_quick_restart1;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(286, 15);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(106, 52);
-            this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "&Refresh";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::BLSystem.Properties.Resources.edit_3;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(152, 15);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(106, 52);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "&Edit";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::BLSystem.Properties.Resources.address_book_new;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(18, 15);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 52);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "&New";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // pgAb
-            // 
-            this.pgAb.Location = new System.Drawing.Point(174, 16);
-            this.pgAb.Name = "pgAb";
-            this.pgAb.Size = new System.Drawing.Size(298, 23);
-            this.pgAb.TabIndex = 1;
-            // 
-            // lmsg
-            // 
-            this.lmsg.AutoSize = true;
-            this.lmsg.ForeColor = System.Drawing.Color.Brown;
-            this.lmsg.Location = new System.Drawing.Point(512, 19);
-            this.lmsg.Name = "lmsg";
-            this.lmsg.Size = new System.Drawing.Size(21, 20);
-            this.lmsg.TabIndex = 2;
-            this.lmsg.Text = "...";
-            // 
             // FormAddressBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -418,10 +419,10 @@
             this.panelTop.ResumeLayout(false);
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
-            this.panelBot.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAB)).EndInit();
             this.panelMBot.ResumeLayout(false);
             this.panelMBot.PerformLayout();
+            this.panelBot.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAB)).EndInit();
             this.ResumeLayout(false);
 
         }

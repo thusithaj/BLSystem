@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration.Install;
 
 namespace BLSystem
 {
@@ -17,6 +18,9 @@ namespace BLSystem
         public BLSystemMain()
         {
             InitializeComponent();
+            RuntimeValues.Factory = System.Configuration.ConfigurationManager.AppSettings["Factory"].ToString();
+            //RuntimeValues.FactoryName = System.Configuration.ConfigurationManager.AppSettings["FactoryName"].ToString();
+            RuntimeValues.Company = System.Configuration.ConfigurationManager.AppSettings["Company"].ToString();
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -151,11 +155,13 @@ namespace BLSystem
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImportTrn childForm = new FormImportTrn();
+            FormTransaction childForm = new FormTransaction();
+            childForm.formMode = "Financial";
             childForm.MdiParent = this;
             //childForm.Text = "Window " + childFormNumber++;
             childForm.WindowState = FormWindowState.Maximized;
             childForm.Show();
+            
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,6 +187,110 @@ namespace BLSystem
         private void BLSystemMain_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProcessMonth childForm = new FormProcessMonth();
+            childForm.MdiParent = this;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void partnerLedgerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPartnerLedger childForm = new FormPartnerLedger();
+            childForm.ReportName = "PartnerLedger.rpt";
+            childForm.MdiParent = this;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void profitAndLossToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPartnerLedger childForm = new FormPartnerLedger();
+            childForm.ReportName = "SimpleProfitLoss.rpt";
+            childForm.MdiParent = this;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void importExportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormImportTrn childForm = new FormImportTrn();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void fiscalPeriodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFiscalPeriod childForm = new FormFiscalPeriod();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void routeRatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRouteMaster childForm = new FormRouteMaster();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void supplierDeductionRateUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSupplierRate childForm = new FormSupplierRate();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void addRouteQtyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void addRouteQtyToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FormExtraEntry childForm = new FormExtraEntry();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void monthlyDeductionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProcess childForm = new FormProcess();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void monthlyReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPrint childForm = new FormPrint();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.Show();
+        }
+
+        private void supplierReceiptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTC12 childForm = new FormTC12();
+            childForm.MdiParent = this;
+            //childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.ReportName = "SupplierReceipt2.rpt";
+            childForm.Show();
         }
     }
 }

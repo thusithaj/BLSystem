@@ -13,17 +13,15 @@ namespace BLSystem
 
         public int? PriceListType { get; set; }
 
-        public int? PartnerId { get; set; }
-
         public int? ProductId { get; set; }
+
+        public int? PartnerId { get; set; }
 
         [Column(TypeName = "money")]
         public decimal? Price { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? EffectFrom { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? EffectTo { get; set; }
 
         public int? Status { get; set; }
@@ -35,6 +33,8 @@ namespace BLSystem
         public int? ModifiedBy { get; set; }
 
         public DateTime? ModifiedDate { get; set; }
+
+        public virtual AddressBook AddressBook { get; set; }
 
         public virtual PriceListType PriceListType1 { get; set; }
 

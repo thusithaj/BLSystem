@@ -93,6 +93,16 @@ namespace BLSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document_print {
+            get {
+                object obj = ResourceManager.GetObject("document-print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap document_quick_restart {
             get {
                 object obj = ResourceManager.GetObject("document-quick_restart", resourceCulture);
@@ -193,9 +203,39 @@ namespace BLSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gnome_gnometris {
+            get {
+                object obj = ResourceManager.GetObject("gnome-gnometris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gnome_invest {
+            get {
+                object obj = ResourceManager.GetObject("gnome-invest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gnome_mastermind {
             get {
                 object obj = ResourceManager.GetObject("gnome-mastermind", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gnome_panel {
+            get {
+                object obj = ResourceManager.GetObject("gnome-panel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

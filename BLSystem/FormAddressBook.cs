@@ -302,6 +302,11 @@ namespace BLSystem
             }
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void GetContents()
         {
             address.AddressType = bookType.id;

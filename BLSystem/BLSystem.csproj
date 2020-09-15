@@ -35,12 +35,17 @@
     <ApplicationIcon>TeaLeafIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -48,6 +53,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,11 +66,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DistributionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistributionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="FormExtraEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExtraEntry.Designer.cs">
+      <DependentUpon>FormExtraEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFiscalPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFiscalPeriod.Designer.cs">
+      <DependentUpon>FormFiscalPeriod.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormImportTrn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormImportTrn.Designer.cs">
       <DependentUpon>FormImportTrn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPartnerLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPartnerLedger.Designer.cs">
+      <DependentUpon>FormPartnerLedger.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPriceList.cs">
       <SubType>Form</SubType>
@@ -71,17 +103,53 @@
     <Compile Include="FormPriceList.Designer.cs">
       <DependentUpon>FormPriceList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrint.Designer.cs">
+      <DependentUpon>FormPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcess.Designer.cs">
+      <DependentUpon>FormProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcessMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcessMonth.Designer.cs">
+      <DependentUpon>FormProcessMonth.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProducts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProducts.Designer.cs">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRouteMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRouteMaster.Designer.cs">
+      <DependentUpon>FormRouteMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSupplierMaster.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSupplierMaster.Designer.cs">
       <DependentUpon>FormSupplierMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSupplierRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplierRate.Designer.cs">
+      <DependentUpon>FormSupplierRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTC12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTC12.Designer.cs">
+      <DependentUpon>FormTC12.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTransaction.cs">
       <SubType>Form</SubType>
@@ -121,24 +189,128 @@
     </Compile>
     <Compile Include="model\AddressBook.cs" />
     <Compile Include="model\AddressBookType.cs" />
+    <Compile Include="model\Collection_tbl.cs" />
     <Compile Include="model\CompanyMaster.cs" />
+    <Compile Include="model\ExcludeSupplier.cs" />
     <Compile Include="model\FactoryMaster.cs" />
+    <Compile Include="model\FiscalPeriod.cs" />
+    <Compile Include="model\Main_Reg.cs" />
+    <Compile Include="model\PaymentDetail.cs" />
+    <Compile Include="model\PaymentMaster.cs" />
     <Compile Include="model\PMModel.cs" />
     <Compile Include="model\PriceList.cs" />
     <Compile Include="model\PriceListType.cs" />
     <Compile Include="model\Product.cs" />
+    <Compile Include="model\RouteMaster.cs" />
     <Compile Include="model\RouteQty.cs" />
     <Compile Include="model\SupplierLedger.cs" />
     <Compile Include="model\SupplierMaster.cs" />
     <Compile Include="model\sysdiagram.cs" />
     <Compile Include="model\TeamMaster.cs" />
+    <Compile Include="model\ViewPartnerLedger.cs" />
     <Compile Include="model\WorkCenterMaster.cs" />
     <Compile Include="OldBlObj.cs" />
+    <Compile Include="PartnerLedger.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartnerLedger.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="PaymentLedger.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentLedger.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="PreVerification.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PreVerification.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RuntimeValues.cs" />
+    <Compile Include="SimpleProfitLoss.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimpleProfitLoss.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SQL2005\AddressBook.cs" />
+    <Compile Include="SQL2005\AddressBookType.cs" />
+    <Compile Include="SQL2005\Collection_tbl.cs" />
+    <Compile Include="SQL2005\CompanyMaster.cs" />
+    <Compile Include="SQL2005\ExcludeSupplier.cs" />
+    <Compile Include="SQL2005\FactoryMaster.cs" />
+    <Compile Include="SQL2005\FiscalPeriod.cs" />
+    <Compile Include="SQL2005\Main_Reg.cs" />
+    <Compile Include="SQL2005\PaymentDetail.cs" />
+    <Compile Include="SQL2005\PaymentMaster.cs" />
+    <Compile Include="SQL2005\PM2005.cs" />
+    <Compile Include="SQL2005\PriceList.cs" />
+    <Compile Include="SQL2005\PriceListType.cs" />
+    <Compile Include="SQL2005\Product.cs" />
+    <Compile Include="SQL2005\RouteMaster.cs" />
+    <Compile Include="SQL2005\RouteQty.cs" />
+    <Compile Include="SQL2005\SupplierLedger.cs" />
+    <Compile Include="SQL2005\SupplierMaster.cs" />
+    <Compile Include="SQL2005\TeamMaster.cs" />
+    <Compile Include="SQL2005\ViewPartnerLedger.cs" />
+    <Compile Include="SQL2005\WorkCenterMaster.cs" />
+    <Compile Include="SupplierReceipt2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierReceipt2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Tc15New.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tc15New.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="TC15Summary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TC15Summary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <EmbeddedResource Include="BLSystemMain.resx">
       <DependentUpon>BLSystemMain.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="SupplierReceipt2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierReceipt2.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TC15Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TC15Summary.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Tc15New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Tc15New.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DistributionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DistributionReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <EmbeddedResource Include="FormAddressBook.resx">
       <DependentUpon>FormAddressBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,24 +320,71 @@
     <EmbeddedResource Include="FormCompany.resx">
       <DependentUpon>FormCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormExtraEntry.resx">
+      <DependentUpon>FormExtraEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFactory.resx">
       <DependentUpon>FormFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFiscalPeriod.resx">
+      <DependentUpon>FormFiscalPeriod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormImportTrn.resx">
       <DependentUpon>FormImportTrn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPartnerLedger.resx">
+      <DependentUpon>FormPartnerLedger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPriceList.resx">
       <DependentUpon>FormPriceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrint.resx">
+      <DependentUpon>FormPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcess.resx">
+      <DependentUpon>FormProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcessMonth.resx">
+      <DependentUpon>FormProcessMonth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRouteMaster.resx">
+      <DependentUpon>FormRouteMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSupplierMaster.resx">
       <DependentUpon>FormSupplierMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplierRate.resx">
+      <DependentUpon>FormSupplierRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTC12.resx">
+      <DependentUpon>FormTC12.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransaction.resx">
       <DependentUpon>FormTransaction.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="SimpleProfitLoss.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SimpleProfitLoss.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PartnerLedger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PartnerLedger.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PreVerification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PreVerification.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PaymentLedger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentLedger.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -194,8 +413,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reports.xsc">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports.xss">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </None>
     <None Include="Resources\address-book-new.png" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +458,13 @@
     <None Include="Resources\gnomeicu.ico" />
     <None Include="Resources\gnome-gnect.ico" />
     <None Include="Resources\gnome-mastermind.ico" />
+    <None Include="Resources\gnome-invest.ico" />
+    <None Include="Resources\gnome-panel.ico" />
+    <None Include="Resources\gnome-gnometris.ico" />
+    <None Include="Resources\document-print.png" />
+    <Content Include="reportdefs.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TeaLeafIcon.ico" />
   </ItemGroup>
   <ItemGroup />

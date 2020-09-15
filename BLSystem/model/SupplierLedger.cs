@@ -19,7 +19,7 @@ namespace BLSystem
 
         public int? RelatedFactory { get; set; }
 
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime TrnDate { get; set; }
 
         public decimal Quantity { get; set; }

@@ -12,6 +12,8 @@ namespace BLSystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AddressBook()
         {
+            PaymentMasters = new HashSet<PaymentMaster>();
+            PriceLists = new HashSet<PriceList>();
             SupplierLedgers = new HashSet<SupplierLedger>();
             SupplierLedgers1 = new HashSet<SupplierLedger>();
             SupplierMasters = new HashSet<SupplierMaster>();
@@ -56,6 +58,12 @@ namespace BLSystem
         public virtual AddressBookType AddressBookType { get; set; }
 
         public virtual FactoryMaster FactoryMaster { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaymentMaster> PaymentMasters { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PriceList> PriceLists { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupplierLedger> SupplierLedgers { get; set; }

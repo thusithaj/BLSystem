@@ -45,18 +45,30 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.routeRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.supplierDeductionRateUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.partnerLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profitAndLossToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthlyReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.processToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthlyDeductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRouteQtyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fiscalPeriodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +90,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.supplierReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -89,6 +103,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
             this.editMenu,
+            this.reportsToolStripMenuItem,
+            this.processToolStripMenuItem,
             this.viewMenu,
             this.toolsMenu,
             this.windowsMenu,
@@ -117,8 +133,8 @@
             this.exitToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(44, 24);
-            this.fileMenu.Text = "&File";
+            this.fileMenu.Size = new System.Drawing.Size(66, 24);
+            this.fileMenu.Text = "&Master";
             // 
             // newToolStripMenuItem
             // 
@@ -212,14 +228,18 @@
             // 
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.undoToolStripMenuItem,
+            this.cutToolStripMenuItem,
             this.redoToolStripMenuItem,
             this.toolStripSeparator6,
-            this.cutToolStripMenuItem,
             this.copyToolStripMenuItem,
             this.pasteToolStripMenuItem,
             this.toolStripSeparator7,
-            this.selectAllToolStripMenuItem});
+            this.selectAllToolStripMenuItem,
+            this.routeRatesToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.supplierDeductionRateUpdateToolStripMenuItem});
             this.editMenu.Name = "editMenu";
+            this.editMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
             this.editMenu.Size = new System.Drawing.Size(96, 24);
             this.editMenu.Text = "&Transaction";
             // 
@@ -229,24 +249,9 @@
             this.undoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
             this.undoToolStripMenuItem.Text = "&Addition && Deducations";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Image = global::BLSystem.Properties.Resources.gnome_gnect;
-            this.redoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.redoToolStripMenuItem.Text = "Purchases";
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(293, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -254,9 +259,24 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
             this.cutToolStripMenuItem.Text = "S&ales";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Image = global::BLSystem.Properties.Resources.gnome_gnect;
+            this.redoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
+            this.redoToolStripMenuItem.Text = "Purchases";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(296, 6);
             // 
             // copyToolStripMenuItem
             // 
@@ -264,7 +284,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
             this.copyToolStripMenuItem.Text = "Purc&hase Price";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
@@ -274,21 +294,104 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
             this.pasteToolStripMenuItem.Text = "Sa&les Price";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(293, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(296, 6);
             // 
             // selectAllToolStripMenuItem
             // 
+            this.selectAllToolStripMenuItem.Image = global::BLSystem.Properties.Resources.gnome_invest;
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.selectAllToolStripMenuItem.Text = "Select &All";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
+            this.selectAllToolStripMenuItem.Text = "Update &Month";
+            this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
+            // 
+            // routeRatesToolStripMenuItem
+            // 
+            this.routeRatesToolStripMenuItem.Image = global::BLSystem.Properties.Resources.gnome_gnometris;
+            this.routeRatesToolStripMenuItem.Name = "routeRatesToolStripMenuItem";
+            this.routeRatesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
+            this.routeRatesToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
+            this.routeRatesToolStripMenuItem.Text = "Route Rates";
+            this.routeRatesToolStripMenuItem.Click += new System.EventHandler(this.routeRatesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(296, 6);
+            // 
+            // supplierDeductionRateUpdateToolStripMenuItem
+            // 
+            this.supplierDeductionRateUpdateToolStripMenuItem.Image = global::BLSystem.Properties.Resources.address_book_new;
+            this.supplierDeductionRateUpdateToolStripMenuItem.Name = "supplierDeductionRateUpdateToolStripMenuItem";
+            this.supplierDeductionRateUpdateToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
+            this.supplierDeductionRateUpdateToolStripMenuItem.Text = "Supplier Deduction Rate Update";
+            this.supplierDeductionRateUpdateToolStripMenuItem.Click += new System.EventHandler(this.supplierDeductionRateUpdateToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.partnerLedgerToolStripMenuItem,
+            this.profitAndLossToolStripMenuItem,
+            this.monthlyReportsToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.supplierReceiptToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // partnerLedgerToolStripMenuItem
+            // 
+            this.partnerLedgerToolStripMenuItem.Image = global::BLSystem.Properties.Resources.gnome_panel;
+            this.partnerLedgerToolStripMenuItem.Name = "partnerLedgerToolStripMenuItem";
+            this.partnerLedgerToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.partnerLedgerToolStripMenuItem.Text = "Partner Ledger";
+            this.partnerLedgerToolStripMenuItem.Click += new System.EventHandler(this.partnerLedgerToolStripMenuItem_Click);
+            // 
+            // profitAndLossToolStripMenuItem
+            // 
+            this.profitAndLossToolStripMenuItem.Image = global::BLSystem.Properties.Resources.db_add;
+            this.profitAndLossToolStripMenuItem.Name = "profitAndLossToolStripMenuItem";
+            this.profitAndLossToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.profitAndLossToolStripMenuItem.Text = "Profit and Loss";
+            this.profitAndLossToolStripMenuItem.Click += new System.EventHandler(this.profitAndLossToolStripMenuItem_Click);
+            // 
+            // monthlyReportsToolStripMenuItem
+            // 
+            this.monthlyReportsToolStripMenuItem.Image = global::BLSystem.Properties.Resources.document_print;
+            this.monthlyReportsToolStripMenuItem.Name = "monthlyReportsToolStripMenuItem";
+            this.monthlyReportsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.monthlyReportsToolStripMenuItem.Text = "Monthly Reports";
+            this.monthlyReportsToolStripMenuItem.Click += new System.EventHandler(this.monthlyReportsToolStripMenuItem_Click);
+            // 
+            // processToolStripMenuItem
+            // 
+            this.processToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.monthlyDeductionToolStripMenuItem,
+            this.addRouteQtyToolStripMenuItem});
+            this.processToolStripMenuItem.Name = "processToolStripMenuItem";
+            this.processToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.processToolStripMenuItem.Text = "P&rocess";
+            // 
+            // monthlyDeductionToolStripMenuItem
+            // 
+            this.monthlyDeductionToolStripMenuItem.Name = "monthlyDeductionToolStripMenuItem";
+            this.monthlyDeductionToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.monthlyDeductionToolStripMenuItem.Text = "Monthly Deduction";
+            this.monthlyDeductionToolStripMenuItem.Click += new System.EventHandler(this.monthlyDeductionToolStripMenuItem_Click);
+            // 
+            // addRouteQtyToolStripMenuItem
+            // 
+            this.addRouteQtyToolStripMenuItem.Name = "addRouteQtyToolStripMenuItem";
+            this.addRouteQtyToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.addRouteQtyToolStripMenuItem.Text = "Add Route Qty";
+            this.addRouteQtyToolStripMenuItem.Click += new System.EventHandler(this.addRouteQtyToolStripMenuItem_Click_1);
             // 
             // viewMenu
             // 
@@ -322,7 +425,9 @@
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.importExportToolStripMenuItem,
+            this.fiscalPeriodToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(56, 24);
             this.toolsMenu.Text = "&Tools";
@@ -330,8 +435,22 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // importExportToolStripMenuItem
+            // 
+            this.importExportToolStripMenuItem.Name = "importExportToolStripMenuItem";
+            this.importExportToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.importExportToolStripMenuItem.Text = "Import && Export";
+            this.importExportToolStripMenuItem.Click += new System.EventHandler(this.importExportToolStripMenuItem_Click);
+            // 
+            // fiscalPeriodToolStripMenuItem
+            // 
+            this.fiscalPeriodToolStripMenuItem.Name = "fiscalPeriodToolStripMenuItem";
+            this.fiscalPeriodToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.fiscalPeriodToolStripMenuItem.Text = "&Fiscal Period";
+            this.fiscalPeriodToolStripMenuItem.Click += new System.EventHandler(this.fiscalPeriodToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -500,6 +619,18 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(213, 6);
+            // 
+            // supplierReceiptToolStripMenuItem
+            // 
+            this.supplierReceiptToolStripMenuItem.Name = "supplierReceiptToolStripMenuItem";
+            this.supplierReceiptToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.supplierReceiptToolStripMenuItem.Text = "Supplier Receipt";
+            this.supplierReceiptToolStripMenuItem.Click += new System.EventHandler(this.supplierReceiptToolStripMenuItem_Click);
+            // 
             // BLSystemMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -511,7 +642,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BLSystemMain";
             this.Text = "BL System Main Window";
             this.Load += new System.EventHandler(this.BLSystemMain_Load);
@@ -576,6 +707,20 @@
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem partnerLedgerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profitAndLossToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fiscalPeriodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem routeRatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem supplierDeductionRateUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem processToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monthlyDeductionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addRouteQtyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monthlyReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem supplierReceiptToolStripMenuItem;
     }
 }
 

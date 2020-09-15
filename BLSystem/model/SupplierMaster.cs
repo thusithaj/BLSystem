@@ -12,6 +12,7 @@ namespace BLSystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SupplierMaster()
         {
+            RouteQties = new HashSet<RouteQty>();
             SupplierLedgers = new HashSet<SupplierLedger>();
         }
 
@@ -23,7 +24,6 @@ namespace BLSystem
 
         public int RegNo { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? RegDate { get; set; }
 
         public int? AddressBookId { get; set; }
@@ -33,15 +33,12 @@ namespace BLSystem
         [StringLength(10)]
         public string WelfareId { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? WelfareRegDate { get; set; }
 
         public int? SavingRegistered { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? SavingRegDate { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? LastLeafDate { get; set; }
 
         public int? Status { get; set; }
@@ -71,6 +68,9 @@ namespace BLSystem
         public virtual AddressBook AddressBook1 { get; set; }
 
         public virtual FactoryMaster FactoryMaster { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RouteQty> RouteQties { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupplierLedger> SupplierLedgers { get; set; }

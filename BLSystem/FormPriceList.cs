@@ -63,22 +63,16 @@ namespace BLSystem
                 cboProduct.DisplayMember = "ProductName";
                 cboProduct.ValueMember = "id";
             }
-            //throw new NotImplementedException();
+            
         }
         private void GetTrnType()
         {
-            //trType = new DataTable();
-            //trType.Columns.Add(new DataColumn("TrnType", typeof(string)));
+          
             priceType = contxt.PriceListTypes.FirstOrDefault(o => o.ListTypeName == Trntype);
             
-
-            //cboTrType.DataSource = trType;
-            //cboTrType.DisplayMember = "TrnType";
-            //cboTrType.ValueMember = "TrnType";
-            //cboTrType.SelectedItem = Trntype;
             GetAddressBook();
             GetProducts();
-            //throw new NotImplementedException();
+           
         }
 
         private void cboTrType_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,6 +116,7 @@ namespace BLSystem
             priceList.CreatedBy = 1;
             priceList.CreatedDate = DateTime.Now;
             if (partner != null )
+                if (partner.id != 0)
                 priceList.PartnerId = contxt.SupplierMasters.FirstOrDefault(o=>o.AddressBookId== partner.id).id;
             priceList.PriceListType = priceType.id;
             priceList.ProductId = product.id;

@@ -4,31 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-
+using System.Data.OleDb;
 namespace BLSystem
 {
     public class OldBlObj
     {
-        System.Data.OleDb.OleDbConnection olecn;
-        System.Data.OleDb.OleDbCommand olecmd;
-        System.Data.OleDb.OleDbDataAdapter oleda;
+        OleDbConnection olecn;
+        OleDbCommand olecmd;
+        OleDbDataAdapter oleda;
         string oldcn;
         //string sql;
         DataTable table;
         public OldBlObj()
         {
             string oldcn = System.Configuration.ConfigurationManager.ConnectionStrings["blold"].ConnectionString;
-            olecn = new System.Data.OleDb.OleDbConnection(oldcn);
+            olecn = new OleDbConnection(oldcn);
         }
 
         public DataTable GetDataTable( string strsql)
         {
-            olecmd = new System.Data.OleDb.OleDbCommand(strsql, olecn);
+            olecmd = new OleDbCommand(strsql, olecn);
             table = new DataTable();
-            oleda = new System.Data.OleDb.OleDbDataAdapter(olecmd);
+            oleda = new OleDbDataAdapter(olecmd);
             oleda.Fill(table);
             olecn.Close();
             return table;
+        }
+        public void SaveBulkData( DataTable table)
+        {
+            
         }
 
     }

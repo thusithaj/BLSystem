@@ -30,10 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImportTrn));
             this.panelTop = new System.Windows.Forms.Panel();
+            this.gbR = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbRM = new System.Windows.Forms.Label();
+            this.pbR = new System.Windows.Forms.ProgressBar();
+            this.btnRImport = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.chkClose = new System.Windows.Forms.CheckBox();
             this.gbOther = new System.Windows.Forms.GroupBox();
             this.gpbOth = new System.Windows.Forms.GroupBox();
             this.lo = new System.Windows.Forms.Label();
-            this.pdbOth = new System.Windows.Forms.ProgressBar();
+            this.pbOth = new System.Windows.Forms.ProgressBar();
             this.btnImpAll = new System.Windows.Forms.Button();
             this.cboAll = new System.Windows.Forms.ComboBox();
             this.groupBoxQty = new System.Windows.Forms.GroupBox();
@@ -44,6 +51,8 @@
             this.dtM = new System.Windows.Forms.DateTimePicker();
             this.lm = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
+            this.gbR.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.gbOther.SuspendLayout();
             this.gpbOth.SuspendLayout();
             this.groupBoxQty.SuspendLayout();
@@ -52,6 +61,9 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.gbR);
+            this.panelTop.Controls.Add(this.btnClose);
+            this.panelTop.Controls.Add(this.chkClose);
             this.panelTop.Controls.Add(this.gbOther);
             this.panelTop.Controls.Add(this.groupBoxQty);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -59,6 +71,84 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1126, 372);
             this.panelTop.TabIndex = 0;
+            // 
+            // gbR
+            // 
+            this.gbR.Controls.Add(this.groupBox2);
+            this.gbR.Controls.Add(this.btnRImport);
+            this.gbR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbR.Location = new System.Drawing.Point(0, 198);
+            this.gbR.Name = "gbR";
+            this.gbR.Size = new System.Drawing.Size(1126, 100);
+            this.gbR.TabIndex = 4;
+            this.gbR.TabStop = false;
+            this.gbR.Text = "Routes";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbRM);
+            this.groupBox2.Controls.Add(this.pbR);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox2.Location = new System.Drawing.Point(574, 23);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(549, 74);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Other Progress";
+            // 
+            // lbRM
+            // 
+            this.lbRM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRM.ForeColor = System.Drawing.Color.Red;
+            this.lbRM.Location = new System.Drawing.Point(153, 42);
+            this.lbRM.Name = "lbRM";
+            this.lbRM.Size = new System.Drawing.Size(349, 27);
+            this.lbRM.TabIndex = 1;
+            this.lbRM.Text = "...";
+            // 
+            // pbR
+            // 
+            this.pbR.Location = new System.Drawing.Point(157, 16);
+            this.pbR.Name = "pbR";
+            this.pbR.Size = new System.Drawing.Size(345, 23);
+            this.pbR.TabIndex = 0;
+            // 
+            // btnRImport
+            // 
+            this.btnRImport.Image = global::BLSystem.Properties.Resources.gnomeicu;
+            this.btnRImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRImport.Location = new System.Drawing.Point(24, 26);
+            this.btnRImport.Name = "btnRImport";
+            this.btnRImport.Size = new System.Drawing.Size(135, 44);
+            this.btnRImport.TabIndex = 3;
+            this.btnRImport.Text = "Import &Routes";
+            this.btnRImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRImport.UseVisualStyleBackColor = true;
+            this.btnRImport.Click += new System.EventHandler(this.btnRImport_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::BLSystem.Properties.Resources.edit_delete_6;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(202, 313);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 46);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "Close";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // chkClose
+            // 
+            this.chkClose.AutoSize = true;
+            this.chkClose.Location = new System.Drawing.Point(15, 322);
+            this.chkClose.Name = "chkClose";
+            this.chkClose.Size = new System.Drawing.Size(127, 24);
+            this.chkClose.TabIndex = 2;
+            this.chkClose.Text = "Close Period";
+            this.chkClose.UseVisualStyleBackColor = true;
+            this.chkClose.CheckedChanged += new System.EventHandler(this.chkClose_CheckedChanged);
             // 
             // gbOther
             // 
@@ -71,12 +161,12 @@
             this.gbOther.Size = new System.Drawing.Size(1126, 100);
             this.gbOther.TabIndex = 1;
             this.gbOther.TabStop = false;
-            this.gbOther.Text = "Other Transaction";
+            this.gbOther.Text = "Leaf Suppliers";
             // 
             // gpbOth
             // 
             this.gpbOth.Controls.Add(this.lo);
-            this.gpbOth.Controls.Add(this.pdbOth);
+            this.gpbOth.Controls.Add(this.pbOth);
             this.gpbOth.Dock = System.Windows.Forms.DockStyle.Right;
             this.gpbOth.Location = new System.Drawing.Point(574, 23);
             this.gpbOth.Name = "gpbOth";
@@ -95,12 +185,12 @@
             this.lo.TabIndex = 1;
             this.lo.Text = "...";
             // 
-            // pdbOth
+            // pbOth
             // 
-            this.pdbOth.Location = new System.Drawing.Point(157, 16);
-            this.pdbOth.Name = "pdbOth";
-            this.pdbOth.Size = new System.Drawing.Size(345, 23);
-            this.pdbOth.TabIndex = 0;
+            this.pbOth.Location = new System.Drawing.Point(157, 16);
+            this.pbOth.Name = "pbOth";
+            this.pbOth.Size = new System.Drawing.Size(345, 23);
+            this.pbOth.TabIndex = 0;
             // 
             // btnImpAll
             // 
@@ -113,6 +203,7 @@
             this.btnImpAll.Text = "Import &All";
             this.btnImpAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImpAll.UseVisualStyleBackColor = true;
+            this.btnImpAll.Click += new System.EventHandler(this.btnImpAll_Click);
             // 
             // cboAll
             // 
@@ -211,6 +302,9 @@
             this.Text = "Import Transactions";
             this.Load += new System.EventHandler(this.FormImportTrn_Load);
             this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
+            this.gbR.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.gbOther.ResumeLayout(false);
             this.gpbOth.ResumeLayout(false);
             this.groupBoxQty.ResumeLayout(false);
@@ -235,6 +329,13 @@
         private System.Windows.Forms.ProgressBar pgbQty;
         private System.Windows.Forms.GroupBox gpbOth;
         private System.Windows.Forms.Label lo;
-        private System.Windows.Forms.ProgressBar pdbOth;
+        private System.Windows.Forms.ProgressBar pbOth;
+        private System.Windows.Forms.CheckBox chkClose;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox gbR;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbRM;
+        private System.Windows.Forms.ProgressBar pbR;
+        private System.Windows.Forms.Button btnRImport;
     }
 }

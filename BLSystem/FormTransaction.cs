@@ -172,7 +172,10 @@ namespace BLSystem
             ledger.SupplierId = contxt.SupplierMasters.FirstOrDefault(o => o.AddressBookId == partner.id).id; ;
             ledger.RouteId =(int) contxt.SupplierMasters.FirstOrDefault(o => o.AddressBookId == partner.id).RouteId;
             ledger.Quantity = nQty.Value;
-            ledger.TotalPrice = nAmt.Value;
+            if (product.TransactionType.Trim() =="CREDIT")
+                ledger.TotalPrice = nAmt.Value * -1;
+            else
+                ledger.TotalPrice = nAmt.Value;
             ledger.TrnDate = dtTrnDate.Value;
             ledger.Ref01 = Trntype;
             ledger.Ref02 = tbRef.Text;

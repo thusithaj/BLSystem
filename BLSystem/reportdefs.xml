@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ReportList" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportList">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="id" msdata:AutoIncrement="true" type="xs:int" minOccurs="0" />
+                <xs:element name="ReportName" type="xs:string" minOccurs="0" />
+                <xs:element name="ReportType" type="xs:string" maxOccurs="0"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportList>
+    <id>0</id>
+    <ReportName>Tc15New.rpt</ReportName>
+    <ReportType>BL</ReportType>
+  </ReportList>
+  <ReportList>
+    <id>1</id>
+    <ReportName>TC15Summary.rpt</ReportName>
+    <ReportType>BL</ReportType>
+  </ReportList>
+  <ReportList>
+    <id>2</id>
+    <ReportName>TransportByVehicle.rpt</ReportName>
+    <ReportType>BL</ReportType>
+  </ReportList>
+  <ReportList>
+    <id>2</id>
+    <ReportName>SalesAnalysis.rpt</ReportName>
+    <ReportType>SALES</ReportType>
+  </ReportList>
+  <ReportList>
+    <id>3</id>
+    <ReportName>SalesAnalysisHigh.rpt</ReportName>
+    <ReportType>SALES</ReportType>
+  </ReportList>
+<ReportList>
+    <id>3</id>
+    <ReportName>DispatchDetails.rpt</ReportName>
+    <ReportType>SALES</ReportType>
+  </ReportList>
+</NewDataSet>
+
